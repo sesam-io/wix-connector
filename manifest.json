@@ -1,0 +1,12 @@
+{
+  "additional_parameters": {
+    "wix-site-id": {}
+  },
+  "auth": "api_key",
+  "datatypes": {
+    "products": {
+      "template": "templates/products.json"
+    }
+  },
+  "system-template": "templates/system.json"
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "{{@ system @}}",
+  "headers": {
+    "Authorization": "$SECRET(api_key)",
+    "wix-site-id": "$ENV(wix-site-id)"
+  },
+  "operations": {
+    "products-list": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "products",
+      "url": "stores/v1/products/query"
+    }
+  },
+  "type": "system:rest",
+  "url_pattern": "https://www.wixapis.com/%s",
+  "verify_ssl": true
+}
