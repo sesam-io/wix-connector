@@ -31,9 +31,19 @@ Updated:
 ```
 
 ## Inventory
+Insert: cannot be inserted directly, but inserting a new product will create a new inventory
 
-TODO
-
+Updated:
+```
+    "$based_on_properties": [
+        "externalId",
+        "id",
+        "lastUpdated",
+        "numericId",
+        "productId",
+        "trackQuantity"
+    ]
+```
 
 ## Orders
 Insert:

@@ -92,8 +92,8 @@
     "inventory-update": {
       "id_expression": "{{ id }}",
       "method": "PATCH",
-      "payload_property": "inventoryItems",
-      "url": "stores/v2/inventoryItems/{{ entity['$source']['id'] }}"
+      "payload_property": "inventoryItem",
+      "url": "stores/v2/inventoryItems/product/{{ entity['$source']['id'] }}"
     },
     "orders-delete": {
       "id_expression": "{{ id }}",
