@@ -43,31 +43,29 @@ Minimal object:
 {
   "_id:" "foo",
   "$origin": "faf",
-  "order": {
-    "channelInfo": {
-      "type": "WEB"
-    },
-    "lineItems": [
-      {
-        "name": "some product",
-        "priceData": {
-          "price": "5"
-        },
-        "quantity": 1
-      }
-    ],
-    "paymentStatus": "PAID",
-    "shippingInfo": {
-      "shipmentDetails": {
-        "address": {
-          "email": "hans@example.com"
-        }
-      }
-    },
-    "totals": {
-      "subtotal": "10",
-      "total": "10"
+  "channelInfo": {
+    "type": "WEB"
+  },
+  "lineItems": [
+    {
+      "name": "some product",
+      "priceData": {
+        "price": "5"
+      },
+      "quantity": 1
     }
+  ],
+  "paymentStatus": "PAID",
+  "shippingInfo": {
+    "shipmentDetails": {
+      "address": {
+        "email": "hans@example.com"
+      }
+    }
+  },
+  "totals": {
+    "subtotal": "10",
+    "total": "10"
   }
 }
 ```
