@@ -5,31 +5,31 @@
   "auth": "api_key",
   "datatypes": {
     "collections": {
-      "template": "templates/products.json",
       "parameters": {
         "payload_property": "collection"
-      }
+      },
+      "template": "templates/products.json"
     },
     "contacts": {
       "template": "templates/contacts.json"
     },
     "inventory": {
-      "template": "templates/products.json",
       "parameters": {
         "payload_property": "inventoryItem"
-      }
+      },
+      "template": "templates/products.json"
     },
     "orders": {
-      "template": "templates/products.json",
       "parameters": {
         "payload_property": "order"
-      }
+      },
+      "template": "templates/products.json"
     },
     "products": {
-      "template": "templates/products.json",
       "parameters": {
         "payload_property": "product"
-      }
+      },
+      "template": "templates/products.json"
     },
     "siteproperties": {
       "template": "templates/siteproperties.json"

@@ -85,9 +85,9 @@
     },
     "inventory-lookup": {
       "id_expression": "{{ id }}",
-      "method": "GET",
-      "payload_property": "inventoryItems",
-      "url": "stores/v2/inventoryItems/{{ entity['$source']['id'] }}"
+      "method": "POST",
+      "payload_property": "inventoryItem",
+      "url": "stores/v2/inventoryItems/{{ entity['$source']['id'] }}/getVariants"
     },
     "inventory-update": {
       "id_expression": "{{ id }}",
