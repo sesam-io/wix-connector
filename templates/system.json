@@ -44,6 +44,7 @@
     "products-insert": {
       "id_expression": "{{ id }}",
       "method": "POST",
+      "payload_property": "product",
       "url": "stores/v1/products"
     },
     "products-list": {
