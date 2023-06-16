@@ -3,8 +3,6 @@ Repository for the Wix connector
 
 The .authconfig file needs an "api_key" property
 
-# TODO last modified
-
 ## Collections
 
 TODO
@@ -27,7 +25,12 @@ Minimal object:
 
 Updated:
 ```
-    "$based_on_properties": TODO
+    "$based_on_properties": [
+        "createdDate",
+        "updatedDate",
+        "id",
+        "info.*"             # for example "info.name.last"
+    ]
 ```
 
 ## Inventory
@@ -80,6 +83,17 @@ Minimal object:
 }
 ```
 
+Updated:
+
+There are several endpoints related to updating an order, but not a "general" endpoint that lets you update several 
+fields at once, see https://dev.wix.com/api/rest/wix-stores/orders. We have 
+
+PUT   `stores/v2/orders/{orderId}/fulfillments/{fulfillmentId}`
+
+PATCH `stores/v2/orders/{orderId}/updateEmail`
+
+PUT   `stores/v2/orders/{orderId}/updateShippingAddress`
+
 ## Products
 Insert:
 
@@ -98,7 +112,22 @@ Minimal object:
 
 Updated:
 ```
-    "$based_on_properties": TODO
+    "$based_on_properties": [
+        "name",
+        "description",
+        "collectionIds",
+        "createdDate",
+        "exportProductId",
+        "id",
+        "inventoryItemId",
+        "lastUpdated",
+        "manageVariants",
+        "numericId",
+        "productType",
+        "slug",
+        "visible",
+        "weight"
+    ]
 ```
 
 ## Siteproperties
