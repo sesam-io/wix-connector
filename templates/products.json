@@ -21,23 +21,60 @@
       "dataset": "{{@ system @}}-{{@ datatype @}}-transform",
       "type": "dataset"
     },
-    "transform": {
-      "properties": {
-        "operation_delete": "{{@ datatype @}}-delete",
-        "operation_insert": "{{@ datatype @}}-insert",
-        "operation_lookup": "{{@ datatype @}}-lookup",
-        "operation_update": "{{@ datatype @}}-update",
-        "primary_key": "id",
-        "rest_system": "{{@ system @}}",
-        "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
+    "transform": [
+      {
+        "rules": {
+          "create-payload": [
+            [
+              "copy",
+              "*",
+              [
+                "list",
+                "_*",
+                "$*"
+              ]
+            ]
+          ],
+          "default": [
+            [
+              "copy",
+              "*"
+            ],
+            [
+              "add",
+              "$payload",
+              [
+                "dict",
+                "{{@ payload_property @}}",
+                [
+                  "apply",
+                  "create-payload",
+                  "_S."
+                ]
+              ]
+            ]
+          ]
+        },
+        "type": "dtl"
       },
-      "template": "transform-share-rest",
-      "trace": {
-        "log_request_body_maxsize": 100000,
-        "log_response_body_maxsize": 100000
-      },
-      "type": "template"
-    },
+      {
+        "properties": {
+          "operation_delete": "{{@ datatype @}}-delete",
+          "operation_insert": "{{@ datatype @}}-insert",
+          "operation_lookup": "{{@ datatype @}}-lookup",
+          "operation_update": "{{@ datatype @}}-update",
+          "primary_key": "id",
+          "rest_system": "{{@ system @}}",
+          "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
+        },
+        "template": "transform-share-rest",
+        "trace": {
+          "log_request_body_maxsize": 100000,
+          "log_response_body_maxsize": 100000
+        },
+        "type": "template"
+      }
+    ],
     "type": "pipe"
   }
 ]

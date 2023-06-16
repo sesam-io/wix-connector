@@ -5,25 +5,40 @@
   "auth": "api_key",
   "datatypes": {
     "collections": {
-      "template": "templates/products.json"
+      "template": "templates/products.json",
+      "parameters": {
+        "payload_property": "collection"
+      }
     },
     "contacts": {
-      "template": "templates/products.json"
+      "template": "templates/contacts.json"
     },
     "inventory": {
-      "template": "templates/products.json"
+      "template": "templates/products.json",
+      "parameters": {
+        "payload_property": "inventoryItem"
+      }
     },
     "orders": {
-      "template": "templates/products.json"
+      "template": "templates/products.json",
+      "parameters": {
+        "payload_property": "order"
+      }
     },
     "products": {
-      "template": "templates/products.json"
+      "template": "templates/products.json",
+      "parameters": {
+        "payload_property": "product"
+      }
     },
     "siteproperties": {
       "template": "templates/siteproperties.json"
     },
     "transactions": {
-      "template": "templates/products.json"
+      "template": "templates/products.json",
+      "parameters": {
+        "payload_property": "transaction"
+      }
     }
   },
   "system-template": "templates/system.json"
