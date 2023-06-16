@@ -95,6 +95,36 @@
       "payload_property": "inventoryItems",
       "url": "stores/v2/inventoryItems/{{ entity['$source']['id'] }}"
     },
+    "orders-delete": {
+      "id_expression": "{{ id }}",
+      "method": "DELETE",
+      "payload_property": "order",
+      "url": "stores/v2/orders/{{ entity['$source']['id'] }}"
+    },
+    "orders-insert": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "order",
+      "url": "stores/v2/orders"
+    },
+    "orders-list": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "orders",
+      "url": "stores/v2/orders/query"
+    },
+    "orders-lookup": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "payload_property": "order",
+      "url": "stores/v2/orders/{{ entity['$source']['id'] }}"
+    },
+    "orders-update": {
+      "id_expression": "{{ id }}",
+      "method": "PATCH",
+      "payload_property": "order",
+      "url": "stores/v2/orders/{{ entity['$source']['id'] }}"
+    },
     "products-delete": {
       "id_expression": "{{ id }}",
       "method": "DELETE",

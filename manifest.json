@@ -13,6 +13,9 @@
     "inventory": {
       "template": "templates/products.json"
     },
+    "orders": {
+      "template": "templates/products.json"
+    },
     "products": {
       "template": "templates/products.json"
     },
