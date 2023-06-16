@@ -5,11 +5,53 @@
     "wix-site-id": "$ENV(wix-site-id)"
   },
   "operations": {
+    "contacts-delete": {
+      "id_expression": "{{ id }}",
+      "method": "DELETE",
+      "payload_property": "contact",
+      "url": "contacts/v4/contacts/{{ entity['$source']['id'] }}"
+    },
+    "contacts-insert": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "contact",
+      "url": "contacts/v4/contacts"
+    },
+    "contacts-list": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "contacts",
+      "url": "contacts/v4/contacts/query"
+    },
+    "contacts-lookup": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "payload_property": "contact",
+      "url": "contacts/v4/contacts/{{ entity['$source']['id'] }}"
+    },
+    "contacts-update": {
+      "id_expression": "{{ id }}",
+      "method": "PATCH",
+      "payload_property": "contact",
+      "url": "contacts/v4/contacts/{{ entity['$source']['id'] }}"
+    },
     "products-list": {
       "id_expression": "{{ id }}",
       "method": "POST",
       "payload_property": "products",
       "url": "stores/v1/products/query"
+    },
+    "siteproperties-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "payload_property": "properties",
+      "url": "site-properties/v4/properties"
+    },
+    "transactions-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "payload_property": "transactions",
+      "url": "payments/v3/transactions"
     }
   },
   "type": "system:rest",

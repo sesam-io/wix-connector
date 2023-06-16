@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "xxxxxx-siteproperties-collect",
+    "type": "pipe",
+    "source": {
+      "type": "rest",
+      "system": "xxxxxx",
+      "trace": {
+        "log_request_body_maxsize": 100000,
+        "log_response_body_maxsize": 100000
+      },
+      "id_expression": "1",
+      "operation": "siteproperties-list",
+      "payload_property": "properties"
+    },
+    "namespaced_identifiers": false
+  }
+]
