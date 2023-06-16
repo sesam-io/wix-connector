@@ -160,12 +160,6 @@
       "method": "GET",
       "payload_property": "properties",
       "url": "site-properties/v4/properties"
-    },
-    "transactions-list": {
-      "id_expression": "{{ id }}",
-      "method": "GET",
-      "payload_property": "transactions",
-      "url": "payments/v3/transactions"
     }
   },
   "type": "system:rest",

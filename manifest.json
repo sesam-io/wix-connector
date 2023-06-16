@@ -33,12 +33,6 @@
     },
     "siteproperties": {
       "template": "templates/siteproperties.json"
-    },
-    "transactions": {
-      "template": "templates/products.json",
-      "parameters": {
-        "payload_property": "transaction"
-      }
     }
   },
   "system-template": "templates/system.json"
