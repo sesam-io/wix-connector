@@ -5,6 +5,36 @@
     "wix-site-id": "$ENV(wix-site-id)"
   },
   "operations": {
+    "collections-delete": {
+      "id_expression": "{{ id }}",
+      "method": "DELETE",
+      "payload_property": "collection",
+      "url": "stores/v1/collections/{{ entity['$source']['id'] }}"
+    },
+    "collections-insert": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "collection",
+      "url": "stores/v1/collections"
+    },
+    "collections-list": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "collections",
+      "url": "stores/v1/collections/query"
+    },
+    "collections-lookup": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "payload_property": "collection",
+      "url": "stores/v1/collections/{{ entity['$source']['id'] }}"
+    },
+    "collections-update": {
+      "id_expression": "{{ id }}",
+      "method": "PATCH",
+      "payload_property": "collection",
+      "url": "stores/v1/collections/{{ entity['$source']['id'] }}"
+    },
     "contacts-delete": {
       "id_expression": "{{ id }}",
       "method": "DELETE",
@@ -34,6 +64,36 @@
       "method": "PATCH",
       "payload_property": "contact",
       "url": "contacts/v4/contacts/{{ entity['$source']['id'] }}"
+    },
+    "inventory-delete": {
+      "id_expression": "{{ id }}",
+      "method": "DELETE",
+      "payload_property": "inventoryItems",
+      "url": "stores/v2/inventoryItems/{{ entity['$source']['id'] }}"
+    },
+    "inventory-insert": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "inventoryItems",
+      "url": "stores/v2/inventoryItems"
+    },
+    "inventory-list": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "inventoryItems",
+      "url": "stores/v2/inventoryItems/query"
+    },
+    "inventory-lookup": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "payload_property": "inventoryItems",
+      "url": "stores/v2/inventoryItems/{{ entity['$source']['id'] }}"
+    },
+    "inventory-update": {
+      "id_expression": "{{ id }}",
+      "method": "PATCH",
+      "payload_property": "inventoryItems",
+      "url": "stores/v2/inventoryItems/{{ entity['$source']['id'] }}"
     },
     "products-delete": {
       "id_expression": "{{ id }}",

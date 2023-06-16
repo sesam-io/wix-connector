@@ -4,7 +4,13 @@
   },
   "auth": "api_key",
   "datatypes": {
+    "collections": {
+      "template": "templates/products.json"
+    },
     "contacts": {
+      "template": "templates/products.json"
+    },
+    "inventory": {
       "template": "templates/products.json"
     },
     "products": {

@@ -3,6 +3,10 @@ Repository for the Wix connector
 
 The .authconfig file needs an "api_key" property
 
+## Collections
+
+TODO
+
 ## Contacts
 Insert:
 
@@ -24,6 +28,11 @@ Updated:
     "$based_on_properties": TODO
 ```
 
+## Inventory
+
+TODO
+
+
 ## Products
 Insert:
 
@@ -41,3 +50,16 @@ Minimal object:
   }
 }
 ```
+
+Updated:
+```
+    "$based_on_properties": TODO
+```
+
+## Siteproperties
+
+TODO
+
+## Transactions
+
+TODO
