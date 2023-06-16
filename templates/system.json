@@ -35,11 +35,34 @@
       "payload_property": "contact",
       "url": "contacts/v4/contacts/{{ entity['$source']['id'] }}"
     },
+    "products-delete": {
+      "id_expression": "{{ id }}",
+      "method": "DELETE",
+      "payload_property": "product",
+      "url": "stores/v1/products/{{ entity['$source']['id'] }}"
+    },
+    "products-insert": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "url": "stores/v1/products"
+    },
     "products-list": {
       "id_expression": "{{ id }}",
       "method": "POST",
       "payload_property": "products",
       "url": "stores/v1/products/query"
+    },
+    "products-lookup": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "payload_property": "product",
+      "url": "stores/v1/products/{{ entity['$source']['id'] }}"
+    },
+    "products-update": {
+      "id_expression": "{{ id }}",
+      "method": "PATCH",
+      "payload_property": "product",
+      "url": "stores/v1/products/{{ entity['$source']['id'] }}"
     },
     "siteproperties-list": {
       "id_expression": "{{ id }}",

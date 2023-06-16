@@ -23,3 +23,21 @@ Updated:
 ```
     "$based_on_properties": TODO
 ```
+
+## Products
+Insert:
+
+Minimal object:
+```
+{
+  "_id": "2",
+  "$origin": "a",
+  "product": {
+    "name": "Test product 5",
+    "priceData": {
+      "price": 6
+    },
+    "productType": "physical"
+  }
+}
+```

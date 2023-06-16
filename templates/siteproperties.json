@@ -1,18 +1,16 @@
-[
-  {
-    "_id": "xxxxxx-siteproperties-collect",
-    "type": "pipe",
-    "source": {
-      "type": "rest",
-      "system": "xxxxxx",
-      "trace": {
-        "log_request_body_maxsize": 100000,
-        "log_response_body_maxsize": 100000
-      },
-      "id_expression": "1",
-      "operation": "siteproperties-list",
-      "payload_property": "properties"
+{
+  "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+  "namespaced_identifiers": false,
+  "source": {
+    "id_expression": "1",
+    "operation": "{{@ datatype @}}-list",
+    "payload_property": "properties",
+    "system": "{{@ system @}}",
+    "trace": {
+      "log_request_body_maxsize": 100000,
+      "log_response_body_maxsize": 100000
     },
-    "namespaced_identifiers": false
-  }
-]
+    "type": "rest"
+  },
+  "type": "pipe"
+}
