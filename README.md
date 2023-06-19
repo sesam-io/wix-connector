@@ -1,7 +1,14 @@
 # wix-connector
 Repository for the Wix connector
 
-The .authconfig file needs an "api_key" property
+The .authconfig file needs an "api_key" property. In addition, you need to add these env-vars manually (for now):
+
+```
+  "wix-site-id": "<wix site id here>"
+```
+
+For convenience, you can put this into a "test-env.json" file locally, but make sure you don't include it in any 
+subsequent `git add` or `git commit` command!
 
 ## Currencies (currency converter)
 
@@ -133,3 +140,8 @@ Updated:
         "weight"
     ]
 ```
+
+## Currencies
+
+Currencies are only available as a collection, there's no insert, get, delete or update APIs.
+

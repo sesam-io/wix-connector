@@ -124,6 +124,12 @@
       "method": "PATCH",
       "payload_property": "product",
       "url": "stores/v1/products/{{ entity['$source']['id'] }}"
+    },
+    "currencies-list": {
+      "id_expression": "{{ code }}",
+      "method": "GET",
+      "payload_property": "currencies",
+      "url": "currency_converter/v1/currencies"
     }
   },
   "type": "system:rest",

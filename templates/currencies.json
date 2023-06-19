@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "namespaced_identifiers": false,
+    "source": {
+      "operation": "{{@ datatype @}}-list",
+      "system": "{{@ system @}}",
+      "type": "rest"
+    },
+    "transform": {
+      "rules": {
+        "default": [
+          [
+            "copy",
+            "*"
+          ]
+        ]
+      },
+      "type": "dtl"
+    },
+    "type": "pipe"
+  }
+]
