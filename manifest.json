@@ -4,12 +4,6 @@
   },
   "auth": "api_key",
   "datatypes": {
-    "collections": {
-      "parameters": {
-        "payload_property": "collection"
-      },
-      "template": "templates/products.json"
-    },
     "contacts": {
       "template": "templates/contacts.json"
     },
@@ -30,9 +24,6 @@
         "payload_property": "product"
       },
       "template": "templates/products.json"
-    },
-    "siteproperties": {
-      "template": "templates/siteproperties.json"
     }
   },
   "system-template": "templates/system.json"

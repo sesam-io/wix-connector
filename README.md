@@ -3,7 +3,7 @@ Repository for the Wix connector
 
 The .authconfig file needs an "api_key" property
 
-## Collections
+## Currencies (currency converter)
 
 TODO
 
@@ -47,6 +47,10 @@ Updated:
         "trackQuantity"
     ]
 ```
+
+## Members
+
+TODO
 
 ## Orders
 Insert:
@@ -129,7 +133,3 @@ Updated:
         "weight"
     ]
 ```
-
-## Siteproperties
-
-TODO
