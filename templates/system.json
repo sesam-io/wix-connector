@@ -65,6 +65,36 @@
       "payload_property": "inventoryItem",
       "url": "stores/v2/inventoryItems/product/{{ entity['$source']['id'] }}"
     },
+    "members-delete": {
+      "id_expression": "{{ id }}",
+      "method": "DELETE",
+      "payload_property": "member",
+      "url": "members/v1/members/{{ entity['$source']['id'] }}"
+    },
+    "members-insert": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "member",
+      "url": "members/v1/members"
+    },
+    "members-list": {
+      "id_expression": "{{ id }}",
+      "method": "POST",
+      "payload_property": "members",
+      "url": "members/v1/members/query"
+    },
+    "members-lookup": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "payload_property": "member",
+      "url": "members/v1/members/{{ entity['$source']['id'] }}"
+    },
+    "members-update": {
+      "id_expression": "{{ id }}",
+      "method": "PATCH",
+      "payload_property": "member",
+      "url": "members/v1/members/{{ entity['$source']['id'] }}"
+    },
     "orders-delete": {
       "id_expression": "{{ id }}",
       "method": "DELETE",

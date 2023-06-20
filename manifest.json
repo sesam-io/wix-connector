@@ -13,6 +13,9 @@
       },
       "template": "templates/products.json"
     },
+    "members": {
+      "template": "templates/contacts.json"
+    },
     "orders": {
       "parameters": {
         "payload_property": "order"
