@@ -49,8 +49,22 @@ Updated:
 ```
 
 ## Members
+Insert:
 
-TODO
+
+
+Updated:
+```
+    "$based_on_properties": [
+        "activityStatus",
+        "contactId",
+        "createdDate",
+        "id",
+        "privacyStatus",
+        "status",
+        "updatedDate"
+    ]
+```
 
 ## Orders
 Insert:
