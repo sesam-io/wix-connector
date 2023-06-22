@@ -11,6 +11,9 @@ For convenience, you can put this into a "test-env.json" file locally, but make 
 subsequent `git add` or `git commit` command!
 
 ## Contacts
+Supports paging: yes - not implemented yet
+Supports continuation: unclear
+
 Insert:
 
 Minimal object:

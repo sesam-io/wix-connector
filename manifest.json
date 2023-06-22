@@ -1,4 +1,5 @@
 {
+  "system": "Wix",
   "additional_parameters": {
     "wix-site-id": {}
   },

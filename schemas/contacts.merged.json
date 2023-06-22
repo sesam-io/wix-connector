@@ -8,9 +8,11 @@
       "type": "string"
     },
     "createdDate": {
+      "description": "Date and time the contact was created. In ISO format.",
       "type": "string"
     },
     "id": {
+      "description": "Contact ID.",
       "type": "string"
     },
     "info": {
@@ -27,51 +29,65 @@
                     "additionalProperties": true,
                     "properties": {
                       "addressLine": {
+                        "description": "Main address line, usually street and number, as free text.",
+                        "type": "string"
+                      },
+                      "addressLine2": {
+                        "description": "Free text providing more detailed address information, such as apartment, suite, or floor.",
                         "type": "string"
                       },
                       "city": {
+                        "description": "City name.",
                         "type": "string"
                       },
                       "country": {
+                        "description": "2-letter country code in an ISO-3166 alpha-2 format.",
                         "type": "string"
                       },
                       "countryFullname": {
+                        "description": "This property isn't documented in the docs",
                         "type": "string"
                       },
                       "formattedAddress": {
+                        "description": "This property isn't documented in the docs",
                         "type": "string"
                       },
                       "postalCode": {
+                        "description": "Postal or zip code.",
                         "type": "string"
                       },
+                      "streetAddress": {
+                        "additionalProperties": false,
+                        "description": "",
+                        "properties": {
+                          "name": {
+                            "description": "Street name.",
+                            "type": "string"
+                          },
+                          "number": {
+                            "description": "Street number.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
                       "subdivision": {
+                        "description": "Code for a subdivision (such as state, prefecture, or province) in an ISO 3166-2 format.",
                         "type": "string"
                       },
                       "subdivisions": {
-                        "items": {
-                          "additionalProperties": true,
-                          "properties": {
-                            "code": {
-                              "type": "string"
-                            },
-                            "name": {
-                              "type": "string"
-                            },
-                            "type": {
-                              "type": "string"
-                            },
-                            "typeInfo": {
-                              "type": "string"
-                            }
-                          },
-                          "type": "object"
-                        },
+                        "description": "This property isn't documented in the docs",
                         "type": "array"
                       }
                     },
                     "type": "object"
                   },
+                  "id": {
+                    "description": "Street address ID. (Note: seems to be optional, not present in test data)",
+                    "type": "string"
+                  },
                   "tag": {
+                    "description": "Address type. Supported values: UNTAGGED, HOME, WORK, BILLING, SHIPPING. UNTAGGED is shown as \"Other\" in the Contact List.",
                     "type": "string"
                   }
                 },
@@ -83,6 +99,7 @@
           "type": "object"
         },
         "company": {
+          "description": "",
           "type": "string"
         },
         "emails": {
@@ -93,15 +110,19 @@
                 "additionalProperties": true,
                 "properties": {
                   "email": {
+                    "description": "Email address.",
                     "type": "string"
                   },
                   "id": {
+                    "description": "Email ID.",
                     "type": "string"
                   },
                   "primary": {
+                    "description": "Indicates whether this is the contact's primary email address. When changing primary to true for an email, the contact's other emails become false.",
                     "type": "boolean"
                   },
                   "tag": {
+                    "description": "Email type. Supported values: UNTAGGED, MAIN, HOME, WORK. UNTAGGED is shown as \"Other\" in the Contact List",
                     "type": "string"
                   }
                 },
@@ -114,59 +135,29 @@
         },
         "extendedFields": {
           "additionalProperties": true,
-          "properties": {
-            "items": {
-              "additionalProperties": true,
-              "properties": {
-                "contacts.displayByFirstName": {
-                  "type": "string"
-                },
-                "contacts.displayByLastName": {
-                  "type": "string"
-                },
-                "emailSubscriptions.deliverabilityStatus": {
-                  "type": "string"
-                },
-                "emailSubscriptions.effectiveEmail": {
-                  "type": "string"
-                },
-                "emailSubscriptions.subscriptionStatus": {
-                  "type": "string"
-                },
-                "invoices.vatId": {
-                  "type": "string"
-                },
-                "members.membershipStatus": {
-                  "type": "string"
-                }
-              },
-              "type": "object"
-            }
-          },
+          "description": "This property isn't documented as it's a general structure",
+          "properties": {},
           "type": "object"
         },
         "labelKeys": {
           "additionalProperties": true,
-          "properties": {
-            "items": {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          },
+          "description": "This property isn't documented as it's a general structure",
+          "properties": {},
           "type": "object"
         },
         "locale": {
+          "description": "Locale in IETF BCP 47 language tag format. Typically, this is a lowercase 2-letter language code, followed by a hyphen, followed by an uppercase 2-letter country code. For example, en-US for U.S. English, and de-DE for Germany German.",
           "type": "string"
         },
         "name": {
           "additionalProperties": true,
           "properties": {
             "first": {
+              "description": "Contact's first name.",
               "type": "string"
             },
             "last": {
+              "description": "Contact's last name.",
               "type": "string"
             }
           },
@@ -180,18 +171,27 @@
                 "additionalProperties": true,
                 "properties": {
                   "countryCode": {
+                    "description": "ISO-3166 alpha-2 country code.",
+                    "type": "string"
+                  },
+                  "e164Phone": {
+                    "description": "ITU E.164-formatted phone number. Automatically generated using phone and countryCode, as long as both of those values are valid.",
                     "type": "string"
                   },
                   "id": {
+                    "description": "Phone ID.",
                     "type": "string"
                   },
                   "phone": {
+                    "description": "Phone number.",
                     "type": "string"
                   },
                   "primary": {
+                    "description": "Whether this is the contact's primary phone number. When changing primary to true for a phone, the contact's other phones become false.",
                     "type": "boolean"
                   },
                   "tag": {
+                    "description": "Phone type. Supported values: UNTAGGED, MAIN, HOME, MOBILE, WORK, FAX. UNTAGGED is shown as \"Other\" in the Contact List.",
                     "type": "string"
                   }
                 },
@@ -204,26 +204,41 @@
         },
         "picture": {
           "additionalProperties": true,
+          "description": "Contact's profile picture.",
           "properties": {
             "image": {
               "additionalProperties": true,
+              "description": "Image. This can contain an image URL or a Wix Media image ID.",
               "properties": {
+                "altText": {
+                  "description": "Image alt text. Optional.",
+                  "type": "string"
+                },
                 "height": {
+                  "description": "Height of the original image.",
                   "type": "integer"
                 },
                 "id": {
+                  "description": "WixMedia image ID. This property is written by Wix when an image is uploaded to the Wix Media Manager.",
                   "type": "string"
                 },
                 "url": {
+                  "description": "Image source: Either a Media Manager URL or external URL.",
+                  "type": "string"
+                },
+                "urlExpirationDate": {
+                  "description": "Image URL expiration date (when relevant). Optional",
                   "type": "string"
                 },
                 "width": {
+                  "description": "Width of the original image.",
                   "type": "integer"
                 }
               },
               "type": "object"
             },
             "imageProvider": {
+              "description": "This property isn't documented in the docs",
               "type": "string"
             }
           },
@@ -236,9 +251,11 @@
       "additionalProperties": true,
       "properties": {
         "activityDate": {
+          "description": "Date and time of the last action. In ISO format.",
           "type": "string"
         },
         "activityType": {
+          "description": "Contact's last action in the site. Supported values: GENERAL, CONTACT_CREATED, MEMBER_LOGIN, MEMBER_REGISTER, MEMBER_STATUS_CHANGED, FORM_SUBMITTED, INBOX_FORM_SUBMITTED, INBOX_PAYMENT_REQUEST_PAID, INBOX_MESSAGE_TO_CUSTOMER, INBOX_MESSAGE_FROM_CUSTOMER, NEWSLETTER_SUBSCRIPTION_FORM_SUBMITTED, NEWSLETTER_SUBSCRIPTION_UNSUBSCRIBE, ECOM_PURCHASE, ECOM_CART_ABANDON, ECOM_CHECKOUT_BUYER, BOOKINGS_APPOINTMENT, HOTELS_RESERVATION, HOTELS_PURCHASE, HOTELS_CONFIRMATION, HOTELS_CANCEL, VIDEO_PURCHASE, VIDEO_RENT, CASHIER_BUTTON_PURCHASE, ARENA_NEW_LEAD, EVENTS_RSVP, INVOICE_PAY, INVOICE_OVERDUE, PRICE_QUOTE_ACCEPT, PRICE_QUOTE_EXPIRE, RESTAURANTS_ORDER, RESTAURANTS_RESERVATION, SHOUTOUT_OPEN, SHOUTOUT_CLICK, CONTACT_MERGED.",
           "type": "string"
         }
       },
@@ -246,17 +263,30 @@
     },
     "picture": {
       "additionalProperties": true,
+      "description": "DEPRECATED: Contact's profile picture. This can contain an image URL and a Wix Media image ID. Deprecation Notice: This property has been replaced with info.picture and will be removed on March 31, 2022. If your app uses this property, we recommend updating your code as soon as possible.",
       "properties": {
+        "altText": {
+          "description": "Image alt text. Optional.",
+          "type": "string"
+        },
         "height": {
+          "description": "Height of the original image.",
           "type": "integer"
         },
         "id": {
+          "description": "WixMedia image ID. This property is written by Wix when an image is uploaded to the Wix Media Manager.",
           "type": "string"
         },
         "url": {
+          "description": "Image source: Either a Media Manager URL or external URL.",
+          "type": "string"
+        },
+        "urlExpirationDate": {
+          "description": "Image URL expiration date (when relevant). Optional",
           "type": "string"
         },
         "width": {
+          "description": "Width of the original image.",
           "type": "integer"
         }
       },
@@ -266,33 +296,40 @@
       "additionalProperties": true,
       "properties": {
         "email": {
+          "description": "Primary email address. This property reflects the email address in info.emails where primary is true.",
           "type": "string"
         },
         "phone": {
+          "description": "Primary phone number. This property reflects the phone number in info.phones where primary is true.",
           "type": "string"
         }
       },
       "type": "object"
     },
     "revision": {
+      "description": "Revision number, which increments by 1 each time the contact is updated. To prevent conflicting changes, the existing revision must be used when updating a contact.",
       "type": "integer"
     },
     "source": {
       "additionalProperties": true,
       "properties": {
         "appId": {
+          "description": "App ID, if the contact was created by an app.",
           "type": "string"
         },
         "sourceType": {
+          "description": "Source type. Supported values: OTHER, ADMIN, WIX_APP, IMPORT, THIRD_PARTY, WIX_BOOKINGS, WIX_CHAT, WIX_EMAIL_MARKETING, WIX_EVENTS, WIX_FORMS, WIX_GROUPS, WIX_HOTELS, WIX_MARKET_PLACE, WIX_MUSIC, WIX_RESTAURANTS, WIX_SITE_MEMBERS, WIX_STORES, WIX_CODE.",
           "type": "string"
         },
         "wixAppId": {
+          "description": "DEPRECATED: App ID, if the contact was created by a Wix app. Deprecation Notice: This property has been replaced with appId and will be removed on March 31, 2022. If your app uses this property, we recommend updating your code as soon as possible.",
           "type": "string"
         }
       },
       "type": "object"
     },
     "updatedDate": {
+      "description": "Date and time the contact was last updated.",
       "type": "string"
     }
   },

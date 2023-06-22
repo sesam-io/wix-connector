@@ -21,60 +21,62 @@
               "items": {
                 "additionalProperties": true,
                 "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Street address ID. (Note: seems to be optional, not present in test data)"
+                  },
                   "address": {
                     "additionalProperties": true,
                     "properties": {
                       "addressLine": {
                         "type": "string",
+                        "description": "Main address line, usually street and number, as free text."
+                      },
+                      "addressLine2": {
+                        "type": "string",
+                        "description": "Free text providing more detailed address information, such as apartment, suite, or floor."
+                      },
+                      "streetAddress": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "number": {
+                            "type": "string",
+                            "description": "Street number."
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Street name."
+                          }
+                        },
                         "description": ""
                       },
                       "city": {
                         "type": "string",
-                        "description": ""
+                        "description": "City name."
                       },
                       "country": {
                         "type": "string",
-                        "description": ""
+                        "description": "2-letter country code in an ISO-3166 alpha-2 format."
                       },
                       "countryFullname": {
                         "type": "string",
-                        "description": ""
+                        "description": "This property isn't documented in the docs"
                       },
                       "formattedAddress": {
                         "type": "string",
-                        "description": ""
+                        "description": "This property isn't documented in the docs"
                       },
                       "postalCode": {
                         "type": "string",
-                        "description": ""
+                        "description": "Postal or zip code."
                       },
                       "subdivision": {
                         "type": "string",
-                        "description": ""
+                        "description": "Code for a subdivision (such as state, prefecture, or province) in an ISO 3166-2 format."
                       },
                       "subdivisions": {
-                        "items": {
-                          "additionalProperties": true,
-                          "properties": {
-                            "code": {
-                              "type": "string",
-                              "description": ""
-                            },
-                            "name": {
-                              "type": "string",
-                              "description": ""
-                            },
-                            "type": {
-                              "type": "string",
-                              "description": ""
-                            },
-                            "typeInfo": {
-                              "type": "string",
-                              "description": ""
-                            }
-                          },
-                          "type": "object"
-                        },
+                        "description": "This property isn't documented in the docs",
                         "type": "array"
                       }
                     },
@@ -82,7 +84,7 @@
                   },
                   "tag": {
                     "type": "string",
-                    "description": ""
+                    "description": "Address type. Supported values: UNTAGGED, HOME, WORK, BILLING, SHIPPING. UNTAGGED is shown as \"Other\" in the Contact List."
                   }
                 },
                 "type": "object"
@@ -105,19 +107,19 @@
                 "properties": {
                   "email": {
                     "type": "string",
-                    "description": ""
+                    "description": "Email address."
                   },
                   "id": {
                     "type": "string",
-                    "description": ""
+                    "description": "Email ID."
                   },
                   "primary": {
                     "type": "boolean",
-                    "description": ""
+                    "description": "Indicates whether this is the contact's primary email address. When changing primary to true for an email, the contact's other emails become false."
                   },
                   "tag": {
                     "type": "string",
-                    "description": ""
+                    "description": "Email type. Supported values: UNTAGGED, MAIN, HOME, WORK. UNTAGGED is shown as \"Other\" in the Contact List"
                   }
                 },
                 "type": "object"
@@ -129,70 +131,30 @@
         },
         "extendedFields": {
           "additionalProperties": true,
-          "properties": {
-            "items": {
-              "additionalProperties": true,
-              "properties": {
-                "contacts.displayByFirstName": {
-                  "type": "string",
-                  "description": ""
-                },
-                "contacts.displayByLastName": {
-                  "type": "string",
-                  "description": ""
-                },
-                "emailSubscriptions.deliverabilityStatus": {
-                  "type": "string",
-                  "description": ""
-                },
-                "emailSubscriptions.effectiveEmail": {
-                  "type": "string",
-                  "description": ""
-                },
-                "emailSubscriptions.subscriptionStatus": {
-                  "type": "string",
-                  "description": ""
-                },
-                "invoices.vatId": {
-                  "type": "string",
-                  "description": ""
-                },
-                "members.membershipStatus": {
-                  "type": "string",
-                  "description": ""
-                }
-              },
-              "type": "object"
-            }
-          },
+          "description": "This property isn't documented as it's a general structure",
+          "properties": {},
           "type": "object"
         },
         "labelKeys": {
           "additionalProperties": true,
-          "properties": {
-            "items": {
-              "items": {
-                "type": "string",
-                "description": ""
-              },
-              "type": "array"
-            }
-          },
+          "description": "This property isn't documented as it's a general structure",
+          "properties": {},
           "type": "object"
         },
         "locale": {
-          "type": "string"
+          "type": "string",
+          "description": "Locale in IETF BCP 47 language tag format. Typically, this is a lowercase 2-letter language code, followed by a hyphen, followed by an uppercase 2-letter country code. For example, en-US for U.S. English, and de-DE for Germany German."
         },
         "name": {
           "additionalProperties": true,
           "properties": {
             "first": {
               "type": "string",
-              "description": ""
+              "description": "Contact's first name."
             },
             "last": {
               "type": "string",
-              "description": ""
+              "description": "Contact's last name."
             }
           },
           "type": "object"
@@ -206,23 +168,27 @@
                 "properties": {
                   "countryCode": {
                     "type": "string",
-                    "description": ""
+                    "description": "ISO-3166 alpha-2 country code."
                   },
                   "id": {
                     "type": "string",
-                    "description": ""
+                    "description": "Phone ID."
                   },
                   "phone": {
                     "type": "string",
-                    "description": ""
+                    "description": "Phone number."
+                  },
+                  "e164Phone": {
+                    "type": "string",
+                    "description": "ITU E.164-formatted phone number. Automatically generated using phone and countryCode, as long as both of those values are valid."
                   },
                   "primary": {
                     "type": "boolean",
-                    "description": ""
+                    "description": "Whether this is the contact's primary phone number. When changing primary to true for a phone, the contact's other phones become false."
                   },
                   "tag": {
                     "type": "string",
-                    "description": ""
+                    "description": "Phone type. Supported values: UNTAGGED, MAIN, HOME, MOBILE, WORK, FAX. UNTAGGED is shown as \"Other\" in the Contact List."
                   }
                 },
                 "type": "object"
@@ -233,33 +199,43 @@
           "type": "object"
         },
         "picture": {
+          "description": "Contact's profile picture.",
           "additionalProperties": true,
           "properties": {
             "image": {
+              "description": "Image. This can contain an image URL or a Wix Media image ID.",
               "additionalProperties": true,
               "properties": {
                 "height": {
                   "type": "integer",
-                  "description": ""
+                  "description": "Height of the original image."
                 },
                 "id": {
                   "type": "string",
-                  "description": ""
+                  "description": "WixMedia image ID. This property is written by Wix when an image is uploaded to the Wix Media Manager."
                 },
                 "url": {
                   "type": "string",
-                  "description": ""
+                  "description": "Image source: Either a Media Manager URL or external URL."
                 },
                 "width": {
                   "type": "integer",
-                  "description": ""
+                  "description": "Width of the original image."
+                },
+                "altText": {
+                  "type": "string",
+                  "description": "Image alt text. Optional."
+                },
+                "urlExpirationDate": {
+                  "type": "string",
+                  "description": "Image URL expiration date (when relevant). Optional"
                 }
               },
               "type": "object"
             },
             "imageProvider": {
               "type": "string",
-              "description": ""
+              "description": "This property isn't documented in the docs"
             }
           },
           "type": "object"
@@ -287,7 +263,7 @@
       "properties": {
         "height": {
           "type": "integer",
-          "description": ""
+          "description": "Height of the original image."
         },
         "id": {
           "type": "string",
@@ -295,11 +271,19 @@
         },
         "url": {
           "type": "string",
-          "description": ""
+          "description": "Image source: Either a Media Manager URL or external URL."
         },
         "width": {
           "type": "integer",
-          "description": ""
+          "description": "Width of the original image."
+        },
+        "altText": {
+          "type": "string",
+          "description": "Image alt text. Optional."
+        },
+        "urlExpirationDate": {
+          "type": "string",
+          "description": "Image URL expiration date (when relevant). Optional"
         }
       },
       "type": "object"
@@ -309,18 +293,18 @@
       "properties": {
         "email": {
           "type": "string",
-          "description": ""
+          "description": "Primary email address. This property reflects the email address in info.emails where primary is true."
         },
         "phone": {
           "type": "string",
-          "description": ""
+          "description": "Primary phone number. This property reflects the phone number in info.phones where primary is true."
         }
       },
       "type": "object"
     },
     "revision": {
       "type": "integer",
-      "description": ""
+      "description": "Revision number, which increments by 1 each time the contact is updated. To prevent conflicting changes, the existing revision must be used when updating a contact."
     },
     "source": {
       "additionalProperties": true,
