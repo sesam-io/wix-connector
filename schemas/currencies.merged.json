@@ -7,9 +7,11 @@
       "type": "null"
     },
     "code": {
+      "description": "Currency code.",
       "type": "string"
     },
     "symbol": {
+      "description": "Currency symbol.",
       "type": "string"
     }
   },

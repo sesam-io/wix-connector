@@ -2,7 +2,16 @@
   "$id": "/api/pipes/xxxxxx-currencies-collect/entity-types/sink",
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
-  "properties": {},
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "Currency code."
+    },
+    "symbol": {
+      "type": "string",
+      "description": "Currency symbol."
+    }
+  },
   "title": "Pipe sink entity type: xxxxxx-currencies-collect",
   "type": "object"
 }

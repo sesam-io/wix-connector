@@ -2,7 +2,75 @@
   "$id": "/api/pipes/xxxxxx-inventory-collect/entity-types/sink",
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
-  "properties": {},
+  "properties": {
+    "externalId": {
+      "type": "string",
+      "description": "Deprecated: use productId."
+    },
+    "id": {
+      "type": "string",
+      "description": "Inventory item ID."
+    },
+    "lastUpdated": {
+      "type": "string",
+      "description": "Last updated timestamp. Datetime in ISO format"
+    },
+    "numericId": {
+      "type": "string",
+      "description": "Inventory’s unique numeric ID (assigned in ascending order). Primarily for sorting and filtering when crawling all inventories."
+    },
+    "preorderInfo": {
+      "additionalProperties": true,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether the item is available for preorder."
+        },
+        "message": {
+          "type": "string",
+          "description": "A message the buyer will see when the item is out of stock and preorder is enabled."
+        },
+        "limit": {
+          "type": "integer",
+          "description": "Number of products that can be preordered after stock reaches zero."
+        }
+      },
+      "type": "object"
+    },
+    "productId": {
+      "type": "string",
+      "description": "Product ID."
+    },
+    "trackQuantity": {
+      "type": "boolean",
+      "description": "Whether quantity is being tracked."
+    },
+    "variants": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "availableForPreorder": {
+            "type": "boolean",
+            "description": "Whether the variant is available for preorder. When true, the variant is out of stock and preorder is enabled on inventory level."
+          },
+          "inStock": {
+            "type": "boolean",
+            "description": "Whether the product is listed as in stock."
+          },
+          "quantity": {
+            "type": "integer",
+            "description": "Quantity currently left in inventory. Optional."
+          },
+          "variantId": {
+            "type": "string",
+            "description": "Variant ID."
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
   "title": "Pipe sink entity type: xxxxxx-inventory-collect",
   "type": "object"
 }

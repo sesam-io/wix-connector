@@ -98,6 +98,14 @@
           "type": "string",
           "description": ""
         },
+        "birthdate": {
+          "type": "string",
+          "description": "Birth date in YYYY-MM-DD format. For example, 2020-03-15."
+        },
+        "jobTitle": {
+          "type": "string",
+          "description": "Contact's job title. Corresponds to the Position field in the Dashboard."
+        },
         "emails": {
           "additionalProperties": true,
           "properties": {

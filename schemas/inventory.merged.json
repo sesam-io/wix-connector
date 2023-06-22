@@ -15,30 +15,45 @@
       ]
     },
     "externalId": {
+      "description": "Deprecated: use productId.",
       "type": "string"
     },
     "id": {
+      "description": "Inventory item ID.",
       "type": "string"
     },
     "lastUpdated": {
+      "description": "Last updated timestamp. Datetime in ISO format",
       "type": "string"
     },
     "numericId": {
+      "description": "Inventory\u2019s unique numeric ID (assigned in ascending order). Primarily for sorting and filtering when crawling all inventories.",
       "type": "string"
     },
     "preorderInfo": {
       "additionalProperties": true,
       "properties": {
         "enabled": {
+          "description": "Whether the item is available for preorder.",
           "type": "boolean"
+        },
+        "limit": {
+          "description": "Number of products that can be preordered after stock reaches zero.",
+          "type": "integer"
+        },
+        "message": {
+          "description": "A message the buyer will see when the item is out of stock and preorder is enabled.",
+          "type": "string"
         }
       },
       "type": "object"
     },
     "productId": {
+      "description": "Product ID.",
       "type": "string"
     },
     "trackQuantity": {
+      "description": "Whether quantity is being tracked.",
       "type": "boolean"
     },
     "variants": {
@@ -46,12 +61,19 @@
         "additionalProperties": true,
         "properties": {
           "availableForPreorder": {
+            "description": "Whether the variant is available for preorder. When true, the variant is out of stock and preorder is enabled on inventory level.",
             "type": "boolean"
           },
           "inStock": {
+            "description": "Whether the product is listed as in stock.",
             "type": "boolean"
           },
+          "quantity": {
+            "description": "Quantity currently left in inventory. Optional.",
+            "type": "integer"
+          },
           "variantId": {
+            "description": "Variant ID.",
             "type": "string"
           }
         },

@@ -8,36 +8,360 @@
       "type": "string"
     },
     "activityStatus": {
+      "description": "Member activity status. Supported values: UNKNOWN, ACTIVE, MUTED. ACTIVE: Member can write forum posts and blog comments. MUTED: Member cannot write forum posts or blog comments. UNKNOWN: Insufficient permissions to get the status.",
       "type": "string"
     },
+    "contact": {
+      "additionalProperties": true,
+      "description": "Corresponds 1:1 to the 'info' property on a contact object",
+      "properties": {
+        "addresses": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "address": {
+                    "additionalProperties": true,
+                    "properties": {
+                      "addressLine": {
+                        "description": "Main address line, usually street and number, as free text.",
+                        "type": "string"
+                      },
+                      "addressLine2": {
+                        "description": "Free text providing more detailed address information, such as apartment, suite, or floor.",
+                        "type": "string"
+                      },
+                      "city": {
+                        "description": "City name.",
+                        "type": "string"
+                      },
+                      "country": {
+                        "description": "2-letter country code in an ISO-3166 alpha-2 format.",
+                        "type": "string"
+                      },
+                      "countryFullname": {
+                        "description": "This property isn't documented in the docs",
+                        "type": "string"
+                      },
+                      "formattedAddress": {
+                        "description": "This property isn't documented in the docs",
+                        "type": "string"
+                      },
+                      "postalCode": {
+                        "description": "Postal or zip code.",
+                        "type": "string"
+                      },
+                      "streetAddress": {
+                        "additionalProperties": false,
+                        "description": "",
+                        "properties": {
+                          "name": {
+                            "description": "Street name.",
+                            "type": "string"
+                          },
+                          "number": {
+                            "description": "Street number.",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "subdivision": {
+                        "description": "Code for a subdivision (such as state, prefecture, or province) in an ISO 3166-2 format.",
+                        "type": "string"
+                      },
+                      "subdivisions": {
+                        "description": "This property isn't documented in the docs",
+                        "type": "array"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "id": {
+                    "description": "Street address ID. (Note: seems to be optional, not present in test data)",
+                    "type": "string"
+                  },
+                  "tag": {
+                    "description": "Address type. Supported values: UNTAGGED, HOME, WORK, BILLING, SHIPPING. UNTAGGED is shown as \"Other\" in the Contact List.",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "birthdate": {
+          "description": "Birth date in YYYY-MM-DD format. For example, 2020-03-15.",
+          "type": "string"
+        },
+        "company": {
+          "description": "",
+          "type": "string"
+        },
+        "emails": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "email": {
+                    "description": "Email address.",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "Email ID.",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Indicates whether this is the contact's primary email address. When changing primary to true for an email, the contact's other emails become false.",
+                    "type": "boolean"
+                  },
+                  "tag": {
+                    "description": "Email type. Supported values: UNTAGGED, MAIN, HOME, WORK. UNTAGGED is shown as \"Other\" in the Contact List",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "extendedFields": {
+          "additionalProperties": true,
+          "description": "This property isn't documented as it's a general structure",
+          "properties": {},
+          "type": "object"
+        },
+        "jobTitle": {
+          "description": "Contact's job title. Corresponds to the Position field in the Dashboard.",
+          "type": "string"
+        },
+        "labelKeys": {
+          "additionalProperties": true,
+          "description": "This property isn't documented as it's a general structure",
+          "properties": {},
+          "type": "object"
+        },
+        "locale": {
+          "description": "Locale in IETF BCP 47 language tag format. Typically, this is a lowercase 2-letter language code, followed by a hyphen, followed by an uppercase 2-letter country code. For example, en-US for U.S. English, and de-DE for Germany German.",
+          "type": "string"
+        },
+        "name": {
+          "additionalProperties": true,
+          "properties": {
+            "first": {
+              "description": "Contact's first name.",
+              "type": "string"
+            },
+            "last": {
+              "description": "Contact's last name.",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "phones": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "countryCode": {
+                    "description": "ISO-3166 alpha-2 country code.",
+                    "type": "string"
+                  },
+                  "e164Phone": {
+                    "description": "ITU E.164-formatted phone number. Automatically generated using phone and countryCode, as long as both of those values are valid.",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "Phone ID.",
+                    "type": "string"
+                  },
+                  "phone": {
+                    "description": "Phone number.",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Whether this is the contact's primary phone number. When changing primary to true for a phone, the contact's other phones become false.",
+                    "type": "boolean"
+                  },
+                  "tag": {
+                    "description": "Phone type. Supported values: UNTAGGED, MAIN, HOME, MOBILE, WORK, FAX. UNTAGGED is shown as \"Other\" in the Contact List.",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "picture": {
+          "additionalProperties": true,
+          "description": "Contact's profile picture.",
+          "properties": {
+            "image": {
+              "additionalProperties": true,
+              "description": "Image. This can contain an image URL or a Wix Media image ID.",
+              "properties": {
+                "altText": {
+                  "description": "Image alt text. Optional.",
+                  "type": "string"
+                },
+                "height": {
+                  "description": "Height of the original image.",
+                  "type": "integer"
+                },
+                "id": {
+                  "description": "WixMedia image ID. This property is written by Wix when an image is uploaded to the Wix Media Manager.",
+                  "type": "string"
+                },
+                "url": {
+                  "description": "Image source: Either a Media Manager URL or external URL.",
+                  "type": "string"
+                },
+                "urlExpirationDate": {
+                  "description": "Image URL expiration date (when relevant). Optional",
+                  "type": "string"
+                },
+                "width": {
+                  "description": "Width of the original image.",
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "imageProvider": {
+              "description": "This property isn't documented in the docs",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "contactId": {
+      "description": "Contact ID.",
       "type": "string"
     },
     "createdDate": {
+      "description": "Date and time when the member was created. ISO format.",
       "type": "string"
     },
     "id": {
+      "description": "Member ID.",
+      "type": "string"
+    },
+    "lastLoginDate": {
+      "description": "Date and time when the member last logged in to the site. ISO format.",
+      "type": "string"
+    },
+    "loginEmail": {
+      "description": "Email used by the member to log in to the site. Optional.",
       "type": "string"
     },
     "privacyStatus": {
+      "description": "Member privacy status. Supported values: UNKNOWN, PRIVATE, PUBLIC. PUBLIC: Member is visible to everyone. PRIVATE: Member is hidden from site visitors and other site members. Member is returned only to site contributors and apps with the appropriate permissions. UNKNOWN: Insufficient permissions to get the status.",
       "type": "string"
     },
     "profile": {
       "additionalProperties": true,
       "properties": {
+        "cover": {
+          "additionalProperties": true,
+          "description": "Member's cover photo, used as a background picture in members profile page. Cover positioning can be altered with cover.offsetX and cover.offsetY. When left empty, the values default to 0.",
+          "properties": {
+            "height": {
+              "description": "Height of the original image.",
+              "type": "integer"
+            },
+            "id": {
+              "description": "WixMedia image ID. This property is written by Wix when an image is uploaded to the Wix Media Manager.",
+              "type": "string"
+            },
+            "offsetX": {
+              "description": "X-axis offset. Defaults to 0",
+              "type": "integer"
+            },
+            "offsetY": {
+              "description": "Y-axis offset. Defaults to 0",
+              "type": "integer"
+            },
+            "url": {
+              "description": "Image source: Either a Media Manager URL or external URL.",
+              "type": "string"
+            },
+            "width": {
+              "description": "Width of the original image.",
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
         "nickname": {
+          "description": "Name that identifies the member to other members. Displayed on the member's profile page and interactions in the forum or blog.",
           "type": "string"
         },
+        "photo": {
+          "additionalProperties": true,
+          "description": "Member's profile photo.",
+          "properties": {
+            "height": {
+              "description": "Height of the original image.",
+              "type": "integer"
+            },
+            "id": {
+              "description": "WixMedia image ID. This property is written by Wix when an image is uploaded to the Wix Media Manager.",
+              "type": "string"
+            },
+            "offsetX": {
+              "description": "X-axis offset. Defaults to 0",
+              "type": "integer"
+            },
+            "offsetY": {
+              "description": "Y-axis offset. Defaults to 0",
+              "type": "integer"
+            },
+            "url": {
+              "description": "Image source: Either a Media Manager URL or external URL.",
+              "type": "string"
+            },
+            "width": {
+              "description": "Width of the original image.",
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
         "slug": {
+          "description": "Slug that determines the member's profile page URL.",
+          "type": "string"
+        },
+        "title": {
+          "description": "Member title. Currently available through the API only.",
           "type": "string"
         }
       },
       "type": "object"
     },
     "status": {
+      "description": "Member site access status. Supported values: UNKNOWN, PENDING, APPROVED, BLOCKED, OFFLINE. PENDING: Member created and is waiting for approval by site owner. APPROVED: Member can log in to the site. OFFLINE: Member is a guest author for the site blog and cannot log in to the site. BLOCKED: Member is blocked and cannot log in to the site. UNKNOWN: Insufficient permissions to get the status.",
       "type": "string"
     },
     "updatedDate": {
+      "description": "Date and time when the member was updated. ISO format.",
       "type": "string"
     }
   },
