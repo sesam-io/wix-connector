@@ -1,0 +1,46 @@
+{
+  "$id": "/api/pipes/xxxxxx-members-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
+    "activityStatus": {
+      "type": "string"
+    },
+    "contactId": {
+      "type": "string"
+    },
+    "createdDate": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "privacyStatus": {
+      "type": "string"
+    },
+    "profile": {
+      "additionalProperties": true,
+      "properties": {
+        "nickname": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "status": {
+      "type": "string"
+    },
+    "updatedDate": {
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-members-collect",
+  "type": "object"
+}

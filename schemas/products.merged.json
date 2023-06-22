@@ -1,0 +1,517 @@
+{
+  "$id": "/api/pipes/xxxxxx-products-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
+    "additionalInfoSections": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "collectionIds": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "convertedPriceData": {
+      "additionalProperties": true,
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "discountedPrice": {
+          "anyOf": [
+            {
+              "subtype": "decimal",
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "formatted": {
+          "additionalProperties": true,
+          "properties": {
+            "discountedPrice": {
+              "type": "string"
+            },
+            "price": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "price": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "costRange": {
+      "additionalProperties": true,
+      "properties": {
+        "maxValue": {
+          "type": "integer"
+        },
+        "minValue": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "createdDate": {
+      "type": "string"
+    },
+    "customTextFields": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "description": {
+      "type": "string"
+    },
+    "discount": {
+      "additionalProperties": true,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "value": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "exportProductId": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "inventoryItemId": {
+      "type": "string"
+    },
+    "lastUpdated": {
+      "type": "string"
+    },
+    "manageVariants": {
+      "type": "boolean"
+    },
+    "media": {
+      "additionalProperties": true,
+      "properties": {
+        "items": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "image": {
+                "additionalProperties": true,
+                "properties": {
+                  "height": {
+                    "type": "integer"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "width": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "mediaType": {
+                "type": "string"
+              },
+              "thumbnail": {
+                "additionalProperties": true,
+                "properties": {
+                  "height": {
+                    "type": "integer"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "width": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "title": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "mainMedia": {
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "image": {
+              "additionalProperties": true,
+              "properties": {
+                "height": {
+                  "type": "integer"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "mediaType": {
+              "type": "string"
+            },
+            "thumbnail": {
+              "additionalProperties": true,
+              "properties": {
+                "height": {
+                  "type": "integer"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "name": {
+      "type": "string"
+    },
+    "numericId": {
+      "type": "string"
+    },
+    "price": {
+      "additionalProperties": true,
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "discountedPrice": {
+          "anyOf": [
+            {
+              "subtype": "decimal",
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "formatted": {
+          "additionalProperties": true,
+          "properties": {
+            "discountedPrice": {
+              "type": "string"
+            },
+            "price": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "price": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "priceData": {
+      "additionalProperties": true,
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "discountedPrice": {
+          "anyOf": [
+            {
+              "subtype": "decimal",
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "formatted": {
+          "additionalProperties": true,
+          "properties": {
+            "discountedPrice": {
+              "type": "string"
+            },
+            "price": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "price": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "priceRange": {
+      "additionalProperties": true,
+      "properties": {
+        "maxValue": {
+          "type": "integer"
+        },
+        "minValue": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "productOptions": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "choices": {
+            "items": {
+              "additionalProperties": true,
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "inStock": {
+                  "type": "boolean"
+                },
+                "media": {
+                  "additionalProperties": true,
+                  "properties": {
+                    "items": {
+                      "items": {
+                        "additionalProperties": true,
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "additionalProperties": true,
+                            "properties": {
+                              "height": {
+                                "type": "integer"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "width": {
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "mediaType": {
+                            "type": "string"
+                          },
+                          "thumbnail": {
+                            "additionalProperties": true,
+                            "properties": {
+                              "height": {
+                                "type": "integer"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "width": {
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "title": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "mainMedia": {
+                      "additionalProperties": true,
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "additionalProperties": true,
+                          "properties": {
+                            "height": {
+                              "type": "integer"
+                            },
+                            "url": {
+                              "type": "string"
+                            },
+                            "width": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "mediaType": {
+                          "type": "string"
+                        },
+                        "thumbnail": {
+                          "additionalProperties": true,
+                          "properties": {
+                            "height": {
+                              "type": "integer"
+                            },
+                            "url": {
+                              "type": "string"
+                            },
+                            "width": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "visible": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "name": {
+            "type": "string"
+          },
+          "optionType": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "productPageUrl": {
+      "additionalProperties": true,
+      "properties": {
+        "base": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "productType": {
+      "type": "string"
+    },
+    "ribbon": {
+      "type": "string"
+    },
+    "ribbons": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "stock": {
+      "additionalProperties": true,
+      "properties": {
+        "inStock": {
+          "type": "boolean"
+        },
+        "inventoryStatus": {
+          "type": "string"
+        },
+        "trackInventory": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "variants": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "visible": {
+      "type": "boolean"
+    },
+    "weight": {
+      "type": "integer"
+    },
+    "weightRange": {
+      "additionalProperties": true,
+      "properties": {
+        "maxValue": {
+          "type": "integer"
+        },
+        "minValue": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-products-collect",
+  "type": "object"
+}

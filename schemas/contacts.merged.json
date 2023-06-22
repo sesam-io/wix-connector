@@ -1,0 +1,301 @@
+{
+  "$id": "/api/pipes/xxxxxx-contacts-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
+    "createdDate": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "info": {
+      "additionalProperties": true,
+      "properties": {
+        "addresses": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "address": {
+                    "additionalProperties": true,
+                    "properties": {
+                      "addressLine": {
+                        "type": "string"
+                      },
+                      "city": {
+                        "type": "string"
+                      },
+                      "country": {
+                        "type": "string"
+                      },
+                      "countryFullname": {
+                        "type": "string"
+                      },
+                      "formattedAddress": {
+                        "type": "string"
+                      },
+                      "postalCode": {
+                        "type": "string"
+                      },
+                      "subdivision": {
+                        "type": "string"
+                      },
+                      "subdivisions": {
+                        "items": {
+                          "additionalProperties": true,
+                          "properties": {
+                            "code": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "typeInfo": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "tag": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "company": {
+          "type": "string"
+        },
+        "emails": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "primary": {
+                    "type": "boolean"
+                  },
+                  "tag": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "extendedFields": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "additionalProperties": true,
+              "properties": {
+                "contacts.displayByFirstName": {
+                  "type": "string"
+                },
+                "contacts.displayByLastName": {
+                  "type": "string"
+                },
+                "emailSubscriptions.deliverabilityStatus": {
+                  "type": "string"
+                },
+                "emailSubscriptions.effectiveEmail": {
+                  "type": "string"
+                },
+                "emailSubscriptions.subscriptionStatus": {
+                  "type": "string"
+                },
+                "invoices.vatId": {
+                  "type": "string"
+                },
+                "members.membershipStatus": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "labelKeys": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "name": {
+          "additionalProperties": true,
+          "properties": {
+            "first": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "phones": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "countryCode": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "primary": {
+                    "type": "boolean"
+                  },
+                  "tag": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "picture": {
+          "additionalProperties": true,
+          "properties": {
+            "image": {
+              "additionalProperties": true,
+              "properties": {
+                "height": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "imageProvider": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "lastActivity": {
+      "additionalProperties": true,
+      "properties": {
+        "activityDate": {
+          "type": "string"
+        },
+        "activityType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "picture": {
+      "additionalProperties": true,
+      "properties": {
+        "height": {
+          "type": "integer"
+        },
+        "id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "primaryInfo": {
+      "additionalProperties": true,
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "revision": {
+      "type": "integer"
+    },
+    "source": {
+      "additionalProperties": true,
+      "properties": {
+        "appId": {
+          "type": "string"
+        },
+        "sourceType": {
+          "type": "string"
+        },
+        "wixAppId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "updatedDate": {
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-contacts-collect",
+  "type": "object"
+}

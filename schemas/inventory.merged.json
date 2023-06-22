@@ -1,0 +1,65 @@
+{
+  "$id": "/api/pipes/xxxxxx-inventory-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "anyOf": [
+        {
+          "subtype": "nanoseconds",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "externalId": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "lastUpdated": {
+      "type": "string"
+    },
+    "numericId": {
+      "type": "string"
+    },
+    "preorderInfo": {
+      "additionalProperties": true,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "productId": {
+      "type": "string"
+    },
+    "trackQuantity": {
+      "type": "boolean"
+    },
+    "variants": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "availableForPreorder": {
+            "type": "boolean"
+          },
+          "inStock": {
+            "type": "boolean"
+          },
+          "variantId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-inventory-collect",
+  "type": "object"
+}

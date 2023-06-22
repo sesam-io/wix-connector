@@ -1,0 +1,350 @@
+{
+  "$id": "/api/pipes/xxxxxx-contacts-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "createdDate": {
+      "type": "string",
+      "description": "Date and time the contact was created. In ISO format."
+    },
+    "id": {
+      "type": "string",
+      "description": "Contact ID."
+    },
+    "info": {
+      "additionalProperties": true,
+      "properties": {
+        "addresses": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "address": {
+                    "additionalProperties": true,
+                    "properties": {
+                      "addressLine": {
+                        "type": "string",
+                        "description": ""
+                      },
+                      "city": {
+                        "type": "string",
+                        "description": ""
+                      },
+                      "country": {
+                        "type": "string",
+                        "description": ""
+                      },
+                      "countryFullname": {
+                        "type": "string",
+                        "description": ""
+                      },
+                      "formattedAddress": {
+                        "type": "string",
+                        "description": ""
+                      },
+                      "postalCode": {
+                        "type": "string",
+                        "description": ""
+                      },
+                      "subdivision": {
+                        "type": "string",
+                        "description": ""
+                      },
+                      "subdivisions": {
+                        "items": {
+                          "additionalProperties": true,
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                              "description": ""
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": ""
+                            },
+                            "type": {
+                              "type": "string",
+                              "description": ""
+                            },
+                            "typeInfo": {
+                              "type": "string",
+                              "description": ""
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "tag": {
+                    "type": "string",
+                    "description": ""
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "company": {
+          "type": "string",
+          "description": ""
+        },
+        "emails": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "description": ""
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": ""
+                  },
+                  "primary": {
+                    "type": "boolean",
+                    "description": ""
+                  },
+                  "tag": {
+                    "type": "string",
+                    "description": ""
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "extendedFields": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "additionalProperties": true,
+              "properties": {
+                "contacts.displayByFirstName": {
+                  "type": "string",
+                  "description": ""
+                },
+                "contacts.displayByLastName": {
+                  "type": "string",
+                  "description": ""
+                },
+                "emailSubscriptions.deliverabilityStatus": {
+                  "type": "string",
+                  "description": ""
+                },
+                "emailSubscriptions.effectiveEmail": {
+                  "type": "string",
+                  "description": ""
+                },
+                "emailSubscriptions.subscriptionStatus": {
+                  "type": "string",
+                  "description": ""
+                },
+                "invoices.vatId": {
+                  "type": "string",
+                  "description": ""
+                },
+                "members.membershipStatus": {
+                  "type": "string",
+                  "description": ""
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "labelKeys": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "type": "string",
+                "description": ""
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "name": {
+          "additionalProperties": true,
+          "properties": {
+            "first": {
+              "type": "string",
+              "description": ""
+            },
+            "last": {
+              "type": "string",
+              "description": ""
+            }
+          },
+          "type": "object"
+        },
+        "phones": {
+          "additionalProperties": true,
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": true,
+                "properties": {
+                  "countryCode": {
+                    "type": "string",
+                    "description": ""
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": ""
+                  },
+                  "phone": {
+                    "type": "string",
+                    "description": ""
+                  },
+                  "primary": {
+                    "type": "boolean",
+                    "description": ""
+                  },
+                  "tag": {
+                    "type": "string",
+                    "description": ""
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "picture": {
+          "additionalProperties": true,
+          "properties": {
+            "image": {
+              "additionalProperties": true,
+              "properties": {
+                "height": {
+                  "type": "integer",
+                  "description": ""
+                },
+                "id": {
+                  "type": "string",
+                  "description": ""
+                },
+                "url": {
+                  "type": "string",
+                  "description": ""
+                },
+                "width": {
+                  "type": "integer",
+                  "description": ""
+                }
+              },
+              "type": "object"
+            },
+            "imageProvider": {
+              "type": "string",
+              "description": ""
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "lastActivity": {
+      "additionalProperties": true,
+      "properties": {
+        "activityDate": {
+          "type": "string",
+          "description": "Date and time of the last action. In ISO format."
+        },
+        "activityType": {
+          "type": "string",
+          "description": "Contact's last action in the site. Supported values: GENERAL, CONTACT_CREATED, MEMBER_LOGIN, MEMBER_REGISTER, MEMBER_STATUS_CHANGED, FORM_SUBMITTED, INBOX_FORM_SUBMITTED, INBOX_PAYMENT_REQUEST_PAID, INBOX_MESSAGE_TO_CUSTOMER, INBOX_MESSAGE_FROM_CUSTOMER, NEWSLETTER_SUBSCRIPTION_FORM_SUBMITTED, NEWSLETTER_SUBSCRIPTION_UNSUBSCRIBE, ECOM_PURCHASE, ECOM_CART_ABANDON, ECOM_CHECKOUT_BUYER, BOOKINGS_APPOINTMENT, HOTELS_RESERVATION, HOTELS_PURCHASE, HOTELS_CONFIRMATION, HOTELS_CANCEL, VIDEO_PURCHASE, VIDEO_RENT, CASHIER_BUTTON_PURCHASE, ARENA_NEW_LEAD, EVENTS_RSVP, INVOICE_PAY, INVOICE_OVERDUE, PRICE_QUOTE_ACCEPT, PRICE_QUOTE_EXPIRE, RESTAURANTS_ORDER, RESTAURANTS_RESERVATION, SHOUTOUT_OPEN, SHOUTOUT_CLICK, CONTACT_MERGED."
+        }
+      },
+      "type": "object"
+    },
+    "picture": {
+      "additionalProperties": true,
+      "description": "DEPRECATED: Contact's profile picture. This can contain an image URL and a Wix Media image ID. Deprecation Notice: This property has been replaced with info.picture and will be removed on March 31, 2022. If your app uses this property, we recommend updating your code as soon as possible.",
+      "properties": {
+        "height": {
+          "type": "integer",
+          "description": ""
+        },
+        "id": {
+          "type": "string",
+          "description": "WixMedia image ID. This property is written by Wix when an image is uploaded to the Wix Media Manager."
+        },
+        "url": {
+          "type": "string",
+          "description": ""
+        },
+        "width": {
+          "type": "integer",
+          "description": ""
+        }
+      },
+      "type": "object"
+    },
+    "primaryInfo": {
+      "additionalProperties": true,
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": ""
+        },
+        "phone": {
+          "type": "string",
+          "description": ""
+        }
+      },
+      "type": "object"
+    },
+    "revision": {
+      "type": "integer",
+      "description": ""
+    },
+    "source": {
+      "additionalProperties": true,
+      "properties": {
+        "appId": {
+          "type": "string",
+          "description": "App ID, if the contact was created by an app."
+        },
+        "sourceType": {
+          "type": "string",
+          "description": "Source type. Supported values: OTHER, ADMIN, WIX_APP, IMPORT, THIRD_PARTY, WIX_BOOKINGS, WIX_CHAT, WIX_EMAIL_MARKETING, WIX_EVENTS, WIX_FORMS, WIX_GROUPS, WIX_HOTELS, WIX_MARKET_PLACE, WIX_MUSIC, WIX_RESTAURANTS, WIX_SITE_MEMBERS, WIX_STORES, WIX_CODE."
+        },
+        "wixAppId": {
+          "type": "string",
+          "description": "DEPRECATED: App ID, if the contact was created by a Wix app. Deprecation Notice: This property has been replaced with appId and will be removed on March 31, 2022. If your app uses this property, we recommend updating your code as soon as possible."
+        }
+      },
+      "type": "object"
+    },
+    "updatedDate": {
+      "type": "string",
+      "description": "Date and time the contact was last updated."
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-contacts-collect",
+  "type": "object"
+}

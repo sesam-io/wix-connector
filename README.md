@@ -10,10 +10,6 @@ The .authconfig file needs an "api_key" property. In addition, you need to add t
 For convenience, you can put this into a "test-env.json" file locally, but make sure you don't include it in any 
 subsequent `git add` or `git commit` command!
 
-## Currencies (currency converter)
-
-TODO
-
 ## Contacts
 Insert:
 
@@ -155,7 +151,7 @@ Updated:
     ]
 ```
 
-## Currencies
+## Currencies (currency converter)
 
 Currencies are only available as a collection, there's no insert, get, delete or update APIs.
 

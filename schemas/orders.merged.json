@@ -1,0 +1,412 @@
+{
+  "$id": "/api/pipes/xxxxxx-orders-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
+    "activities": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "timestamp": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "archived": {
+      "type": "boolean"
+    },
+    "billingInfo": {
+      "additionalProperties": true,
+      "properties": {
+        "address": {
+          "additionalProperties": true,
+          "properties": {
+            "addressLine1": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "company": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "fullName": {
+              "additionalProperties": true,
+              "properties": {
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "subdivision": {
+              "type": "string"
+            },
+            "zipCode": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "paidDate": {
+          "type": "string"
+        },
+        "paymentMethod": {
+          "type": "string"
+        },
+        "refundableByPaymentProvider": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "buyerInfo": {
+      "additionalProperties": true,
+      "properties": {
+        "contactId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identityType": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "buyerLanguage": {
+      "type": "string"
+    },
+    "channelInfo": {
+      "additionalProperties": true,
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "dateCreated": {
+      "type": "string"
+    },
+    "discount": {
+      "additionalProperties": true,
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "enteredBy": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "identityType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fulfillmentStatus": {
+      "type": "string"
+    },
+    "fulfillments": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "id": {
+      "type": "string"
+    },
+    "isInternalOrderCreate": {
+      "type": "boolean"
+    },
+    "lastUpdated": {
+      "type": "string"
+    },
+    "lineItems": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "customTextFields": {
+            "items": {
+              "anyOf": []
+            },
+            "type": "array"
+          },
+          "index": {
+            "type": "integer"
+          },
+          "lineItemType": {
+            "type": "string"
+          },
+          "mediaItem": {
+            "additionalProperties": true,
+            "properties": {
+              "height": {
+                "type": "integer"
+              },
+              "id": {
+                "type": "string"
+              },
+              "mediaId": {
+                "type": "string"
+              },
+              "mediaType": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "options": {
+            "items": {
+              "additionalProperties": true,
+              "properties": {
+                "option": {
+                  "type": "string"
+                },
+                "selection": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "price": {
+            "type": "string"
+          },
+          "priceData": {
+            "additionalProperties": true,
+            "properties": {
+              "price": {
+                "type": "string"
+              },
+              "taxIncludedInPrice": {
+                "type": "boolean"
+              },
+              "totalPrice": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "refundedQuantity": {
+            "type": "integer"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "tax": {
+            "type": "string"
+          },
+          "taxIncludedInPrice": {
+            "type": "boolean"
+          },
+          "totalPrice": {
+            "type": "string"
+          },
+          "translatedName": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "numericId": {
+      "type": "string"
+    },
+    "paymentStatus": {
+      "type": "string"
+    },
+    "read": {
+      "type": "boolean"
+    },
+    "refunds": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "shippingInfo": {
+      "additionalProperties": true,
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "deliveryOption": {
+          "type": "string"
+        },
+        "shipmentDetails": {
+          "additionalProperties": true,
+          "properties": {
+            "address": {
+              "additionalProperties": true,
+              "properties": {
+                "addressLine1": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "company": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "fullName": {
+                  "additionalProperties": true,
+                  "properties": {
+                    "firstName": {
+                      "type": "string"
+                    },
+                    "lastName": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "subdivision": {
+                  "type": "string"
+                },
+                "zipCode": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "discount": {
+              "type": "string"
+            },
+            "priceData": {
+              "additionalProperties": true,
+              "properties": {
+                "price": {
+                  "type": "string"
+                },
+                "taxIncludedInPrice": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
+            "tax": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "shippingRegion": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "totals": {
+      "additionalProperties": true,
+      "properties": {
+        "discount": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer"
+        },
+        "shipping": {
+          "type": "string"
+        },
+        "subtotal": {
+          "type": "string"
+        },
+        "tax": {
+          "type": "string"
+        },
+        "total": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "weightUnit": {
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-orders-collect",
+  "type": "object"
+}
