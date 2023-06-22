@@ -12,9 +12,11 @@
         "additionalProperties": true,
         "properties": {
           "description": {
+            "description": "Product info section description",
             "type": "string"
           },
           "title": {
+            "description": "Product info section title",
             "type": "string"
           }
         },
@@ -24,6 +26,7 @@
     },
     "collectionIds": {
       "items": {
+        "description": "A list of all collection IDs that this product is included in (writable via the Catalog > Collection APIs)",
         "type": "string"
       },
       "type": "array"
@@ -32,11 +35,13 @@
       "additionalProperties": true,
       "properties": {
         "currency": {
+          "description": "Product price currency.",
           "type": "string"
         },
         "discountedPrice": {
           "anyOf": [
             {
+              "description": "Discounted product price (if no discounted price is set, the product price is returned)",
               "subtype": "decimal",
               "type": "string"
             },
@@ -49,15 +54,18 @@
           "additionalProperties": true,
           "properties": {
             "discountedPrice": {
+              "description": "Discounted product price formatted with the currency (if no discounted price is set, the product formatted price is returned)",
               "type": "string"
             },
             "price": {
+              "description": "Product price formatted with the currency",
               "type": "string"
             }
           },
           "type": "object"
         },
         "price": {
+          "description": "Product price",
           "type": "integer"
         }
       },
@@ -67,15 +75,18 @@
       "additionalProperties": true,
       "properties": {
         "maxValue": {
+          "description": "Maximum value.",
           "type": "integer"
         },
         "minValue": {
+          "description": "Minimum value.",
           "type": "integer"
         }
       },
       "type": "object"
     },
     "createdDate": {
+      "description": "Date and time the product was created.",
       "type": "string"
     },
     "customTextFields": {
@@ -85,33 +96,41 @@
       "type": "array"
     },
     "description": {
+      "description": "Product description. Accepts rich text.",
       "type": "string"
     },
     "discount": {
       "additionalProperties": true,
       "properties": {
         "type": {
+          "description": "Supported values: UNDEFINED, NONE, AMOUNT, PERCENT. Discount type: amount / percent",
           "type": "string"
         },
         "value": {
+          "description": "Discount value",
           "type": "integer"
         }
       },
       "type": "object"
     },
     "exportProductId": {
+      "description": "no desc available.",
       "type": "string"
     },
     "id": {
+      "description": "Product ID (generated automatically by the catalog).",
       "type": "string"
     },
     "inventoryItemId": {
+      "description": "Inventory item ID - ID referencing the inventory system.",
       "type": "string"
     },
     "lastUpdated": {
+      "description": "Date and time the product was last updated.",
       "type": "string"
     },
     "manageVariants": {
+      "description": "Whether variants are being managed for this product - enables unique SKU, price and weight per variant. Also affects inventory data.",
       "type": "boolean"
     },
     "media": {
@@ -122,6 +141,7 @@
             "additionalProperties": true,
             "properties": {
               "id": {
+                "description": "Media ID (for example, nsplsh_306d666a123a4a74306459~mv2_d_4517_2992_s_4_2.jpg).",
                 "type": "string"
               },
               "image": {
@@ -131,33 +151,40 @@
                     "type": "integer"
                   },
                   "url": {
+                    "description": "Media item URL.",
                     "type": "string"
                   },
                   "width": {
+                    "description": "Media item width.",
                     "type": "integer"
                   }
                 },
                 "type": "object"
               },
               "mediaType": {
+                "description": "Supported values: unspecified_media_item_type, image, video, audio, document, zip. Media item type (image, video, etc.).",
                 "type": "string"
               },
               "thumbnail": {
                 "additionalProperties": true,
                 "properties": {
                   "height": {
+                    "description": "Media item height.",
                     "type": "integer"
                   },
                   "url": {
+                    "description": "Media item URL.",
                     "type": "string"
                   },
                   "width": {
+                    "description": "Media item width.",
                     "type": "integer"
                   }
                 },
                 "type": "object"
               },
               "title": {
+                "description": "Media item title.",
                 "type": "string"
               }
             },
@@ -169,42 +196,51 @@
           "additionalProperties": true,
           "properties": {
             "id": {
+              "description": "Media ID (for example, nsplsh_306d666a123a4a74306459~mv2_d_4517_2992_s_4_2.jpg).",
               "type": "string"
             },
             "image": {
               "additionalProperties": true,
               "properties": {
                 "height": {
+                  "description": "Media item height.",
                   "type": "integer"
                 },
                 "url": {
+                  "description": "Media item URL.",
                   "type": "string"
                 },
                 "width": {
+                  "description": "Media item width.",
                   "type": "integer"
                 }
               },
               "type": "object"
             },
             "mediaType": {
+              "description": "Supported values: unspecified_media_item_type, image, video, audio, document, zip. Media item type (image, video, etc.).",
               "type": "string"
             },
             "thumbnail": {
               "additionalProperties": true,
               "properties": {
                 "height": {
+                  "description": "Media item height.",
                   "type": "integer"
                 },
                 "url": {
+                  "description": "Media item URL.",
                   "type": "string"
                 },
                 "width": {
+                  "description": "Media item width.",
                   "type": "integer"
                 }
               },
               "type": "object"
             },
             "title": {
+              "description": "Media item title.",
               "type": "string"
             }
           },
@@ -214,20 +250,24 @@
       "type": "object"
     },
     "name": {
+      "description": "Product name.",
       "type": "string"
     },
     "numericId": {
+      "description": "Product\u2019s unique numeric ID (assigned in ascending order). Primarily used for sorting and filtering when crawling all products.",
       "type": "string"
     },
     "price": {
       "additionalProperties": true,
       "properties": {
         "currency": {
+          "description": "Deprecated (use priceData instead). Product price currency",
           "type": "string"
         },
         "discountedPrice": {
           "anyOf": [
             {
+              "description": "Deprecated (use priceData instead). Discounted product price (if no discounted price is set, the product price is returned)",
               "subtype": "decimal",
               "type": "string"
             },
@@ -240,15 +280,18 @@
           "additionalProperties": true,
           "properties": {
             "discountedPrice": {
+              "description": "Deprecated (use priceData instead). Discounted product price (if no discounted price is set, the product price is returned)",
               "type": "string"
             },
             "price": {
+              "description": "Deprecated (use priceData instead). Product price formatted with the currency",
               "type": "string"
             }
           },
           "type": "object"
         },
         "price": {
+          "description": "Deprecated (use priceData instead). Product price",
           "type": "integer"
         }
       },
@@ -258,11 +301,13 @@
       "additionalProperties": true,
       "properties": {
         "currency": {
+          "description": "Product price currency",
           "type": "string"
         },
         "discountedPrice": {
           "anyOf": [
             {
+              "description": "Discounted product price (if no discounted price is set, the product price is returned)",
               "subtype": "decimal",
               "type": "string"
             },
@@ -275,15 +320,18 @@
           "additionalProperties": true,
           "properties": {
             "discountedPrice": {
+              "description": "Discounted product price formatted with the currency (if no discounted price is set, the product formatted price is returned)",
               "type": "string"
             },
             "price": {
+              "description": "Product price formatted with the currency",
               "type": "string"
             }
           },
           "type": "object"
         },
         "price": {
+          "description": "Product price",
           "type": "integer"
         }
       },
@@ -293,9 +341,11 @@
       "additionalProperties": true,
       "properties": {
         "maxValue": {
+          "description": "Maximum value.",
           "type": "integer"
         },
         "minValue": {
+          "description": "Minimum value.",
           "type": "integer"
         }
       },
@@ -310,9 +360,11 @@
               "additionalProperties": true,
               "properties": {
                 "description": {
+                  "description": "Choice name",
                   "type": "string"
                 },
                 "inStock": {
+                  "description": "Based on the customer\u2019s choices, which (if any) variants that include the selected choices are in stock",
                   "type": "boolean"
                 },
                 "media": {
@@ -323,42 +375,51 @@
                         "additionalProperties": true,
                         "properties": {
                           "id": {
+                            "description": "Media ID (for example, nsplsh_306d666a123a4a74306459~mv2_d_4517_2992_s_4_2.jpg).",
                             "type": "string"
                           },
                           "image": {
                             "additionalProperties": true,
                             "properties": {
                               "height": {
+                                "description": "Media item height.",
                                 "type": "integer"
                               },
                               "url": {
+                                "description": "Media item URL.",
                                 "type": "string"
                               },
                               "width": {
+                                "description": "Media item width.",
                                 "type": "integer"
                               }
                             },
                             "type": "object"
                           },
                           "mediaType": {
+                            "description": "Supported values: unspecified_media_item_type, image, video, audio, document, zip. Media item type (image, video, etc.).",
                             "type": "string"
                           },
                           "thumbnail": {
                             "additionalProperties": true,
                             "properties": {
                               "height": {
+                                "description": "Media item height.",
                                 "type": "integer"
                               },
                               "url": {
+                                "description": "Media item URL.",
                                 "type": "string"
                               },
                               "width": {
+                                "description": "Media item width.",
                                 "type": "integer"
                               }
                             },
                             "type": "object"
                           },
                           "title": {
+                            "description": "Media item title.",
                             "type": "string"
                           }
                         },
@@ -370,42 +431,51 @@
                       "additionalProperties": true,
                       "properties": {
                         "id": {
+                          "description": "Media ID (for example, nsplsh_306d666a123a4a74306459~mv2_d_4517_2992_s_4_2.jpg).",
                           "type": "string"
                         },
                         "image": {
                           "additionalProperties": true,
                           "properties": {
                             "height": {
+                              "description": "Media item height.",
                               "type": "integer"
                             },
                             "url": {
+                              "description": "Media item URL.",
                               "type": "string"
                             },
                             "width": {
+                              "description": "Media item width.",
                               "type": "integer"
                             }
                           },
                           "type": "object"
                         },
                         "mediaType": {
+                          "description": "Supported values: unspecified_media_item_type, image, video, audio, document, zip. Media item type (image, video, etc.).",
                           "type": "string"
                         },
                         "thumbnail": {
                           "additionalProperties": true,
                           "properties": {
                             "height": {
+                              "description": "Media item height.",
                               "type": "integer"
                             },
                             "url": {
+                              "description": "Media item URL.",
                               "type": "string"
                             },
                             "width": {
+                              "description": "Media item width.",
                               "type": "integer"
                             }
                           },
                           "type": "object"
                         },
                         "title": {
+                          "description": "Media item title.",
                           "type": "string"
                         }
                       },
@@ -415,9 +485,11 @@
                   "type": "object"
                 },
                 "value": {
+                  "description": "Color hex value or choice name",
                   "type": "string"
                 },
                 "visible": {
+                  "description": "Based on the customer\u2019s choices, which (if any) variants that include the selected choices are visible",
                   "type": "boolean"
                 }
               },
@@ -426,9 +498,11 @@
             "type": "array"
           },
           "name": {
+            "descrtipion": "Option name (e.g., color, size)",
             "type": "string"
           },
           "optionType": {
+            "description": "Supported values: unspecified_option_type, drop_down, color. Option type - color or other(drop down)",
             "type": "string"
           }
         },
@@ -440,18 +514,22 @@
       "additionalProperties": true,
       "properties": {
         "base": {
+          "description": "Base URL. For premium sites, this is the domain. For free sites, this is the site URL (e.g mysite.wixsite.com/mysite).",
           "type": "string"
         },
         "path": {
+          "description": "Path to the product page - e.g /product-page/a-product.",
           "type": "string"
         }
       },
       "type": "object"
     },
     "productType": {
+      "descrtipion": "Supported values: unspecified_product_type, physical, digital. Currently, only creating physical products ( \"productType\": \"physical\" ) is supported via the API.",
       "type": "string"
     },
     "ribbon": {
+      "description": "Product ribbon. Used to highlight relevant information about a product. For example, \"Sale\", \"New Arrival\", \"Sold Out\".",
       "type": "string"
     },
     "ribbons": {
@@ -459,6 +537,7 @@
         "additionalProperties": true,
         "properties": {
           "text": {
+            "description": "Deprecated (use ribbon instead). Ribbon text",
             "type": "string"
           }
         },
@@ -467,21 +546,26 @@
       "type": "array"
     },
     "sku": {
+      "descrtipion": "Stock keeping unit (if variant management is enabled, SKUs will be set per variant, and this field will be empty).",
       "type": "string"
     },
     "slug": {
+      "description": "A friendly URL name (generated automatically by the catalog when a product is created), can be updated.",
       "type": "string"
     },
     "stock": {
       "additionalProperties": true,
       "properties": {
         "inStock": {
+          "description": "Whether the product is currently in stock (relevant only when tracking manually) Deprecated (use inventoryStatus instead)",
           "type": "boolean"
         },
         "inventoryStatus": {
+          "description": "Supported values: IN_STOCK, OUT_OF_STOCK, PARTIALLY_OUT_OF_STOCK. The current status of the inventory: * IN_STOCK - In stock * OUT_OF_STOCK - Not in stock * PARTIALLY_OUT_OF_STOCK - Some of the variants are not in stock",
           "type": "string"
         },
         "trackInventory": {
+          "description": "Whether inventory is being tracked",
           "type": "boolean"
         }
       },
@@ -494,18 +578,22 @@
       "type": "array"
     },
     "visible": {
+      "description": "Whether the product is visible to site visitors.",
       "type": "boolean"
     },
     "weight": {
+      "description": "Product weight (if variant management is enabled, weight will be set per variant, and this field will be empty).",
       "type": "integer"
     },
     "weightRange": {
       "additionalProperties": true,
       "properties": {
         "maxValue": {
+          "description": "Maximum value.",
           "type": "integer"
         },
         "minValue": {
+          "description": "Minimum value.",
           "type": "integer"
         }
       },

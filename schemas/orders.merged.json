@@ -12,9 +12,11 @@
         "additionalProperties": true,
         "properties": {
           "timestamp": {
+            "description": "Activity item timestamp",
             "type": "string"
           },
           "type": {
+            "description": "Supported values: UNSPECIFIED_ORDER_HISTORY_ITEM_TYPE, MERCHANT_COMMENT, ORDER_PLACED, ORDER_PAID, ORDER_FULFILLED, ORDER_NOT_FULFILLED, DOWNLOAD_LINK_SENT, PICKUP_READY_EMAIL_SENT, TRACKING_NUMBER_ADDED, TRACKING_NUMBER_EDITED, TRACKING_LINK_WAS_SET, SHIPPING_CONFIRMATION_EMAIL_SENT, INVOICE_WAS_SET, INVOICE_WAS_REMOVED, INVOICE_WAS_SENT, FULFILLER_EMAIL_SENT, SHIPPING_ADDRESS_EDITED, EMAIL_EDITED, ORDER_PARTIALLY_PAID.",
             "type": "string"
           }
         },
@@ -23,6 +25,7 @@
       "type": "array"
     },
     "archived": {
+      "description": "Whether or not the order was archived.",
       "type": "boolean"
     },
     "billingInfo": {
@@ -32,51 +35,64 @@
           "additionalProperties": true,
           "properties": {
             "addressLine1": {
+              "description": "Address line 1 (free text)",
               "type": "string"
             },
             "city": {
+              "description": "City name",
               "type": "string"
             },
             "company": {
+              "description": "Company name",
               "type": "string"
             },
             "country": {
+              "description": "Country code (2 letters)",
               "type": "string"
             },
             "email": {
+              "description": "Email address",
               "type": "string"
             },
             "fullName": {
               "additionalProperties": true,
               "properties": {
                 "firstName": {
+                  "description": "Customer's first name",
                   "type": "string"
                 },
                 "lastName": {
+                  "description": "Customer's last name",
                   "type": "string"
                 }
               },
               "type": "object"
             },
             "phone": {
+              "description": "Phone number",
               "type": "string"
             },
             "subdivision": {
+              "description": "State or district",
               "type": "string"
             },
             "zipCode": {
+              "description": "ZIP/postal code",
               "type": "string"
             }
           },
           "type": "object"
         },
         "paidDate": {
+          "description": "Payment date",
           "type": "string"
         },
         "paymentMethod": {
+          "description": "Payment method used for this order",
           "type": "string"
         },
         "refundableByPaymentProvider": {
+          "description": "Whether order can be refunded by payment provider (manually or automatic)",
           "type": "boolean"
         }
       },
@@ -86,54 +102,67 @@
       "additionalProperties": true,
       "properties": {
         "contactId": {
+          "description": "property not found in docs",
           "type": "string"
         },
         "email": {
+          "description": "Customer's email address",
           "type": "string"
         },
         "firstName": {
+          "description": "Customer's first name",
           "type": "string"
         },
         "id": {
+          "description": "Wix customer ID",
           "type": "string"
         },
         "identityType": {
+          "description": "Supported values: UNSPECIFIED_IDENTITY_TYPE, MEMBER, CONTACT. Customer type",
           "type": "string"
         },
         "lastName": {
+          "description": "Customer's first name",
           "type": "string"
         },
         "phone": {
+          "description": "Customer's phone number",
           "type": "string"
         },
         "type": {
+          "description": "Deprecated (use identityType instead) Supported values: UNSPECIFIED_IDENTITY_TYPE, MEMBER, CONTACT.",
           "type": "string"
         }
       },
       "type": "object"
     },
     "buyerLanguage": {
+      "description": "Language for communication with the buyer. Defaults to the site language. For a site that supports multiple languages, this is the language the buyer selected.",
       "type": "string"
     },
     "channelInfo": {
       "additionalProperties": true,
       "properties": {
         "type": {
+          "description": "Supported values: UNSPECIFIED, WEB, POS, EBAY, AMAZON, OTHER_PLATFORM, WIX_APP_STORE, WIX_INVOICES, BACKOFFICE_MERCHANT, WISH. Sales channel that submitted the order",
           "type": "string"
         }
       },
       "type": "object"
     },
     "currency": {
+      "description": "Currency used for the pricing of this order in ISO-4217 format.",
       "type": "string"
     },
     "dateCreated": {
+      "description": "Order creation date and time.",
       "type": "string"
     },
     "discount": {
       "additionalProperties": true,
       "properties": {
         "value": {
+          "description": "Deprecated (use Totals.discount instead)",
           "type": "string"
         }
       },
@@ -143,15 +172,18 @@
       "additionalProperties": true,
       "properties": {
         "id": {
+          "description": "",
           "type": "string"
         },
         "identityType": {
+          "description": "Supported values: USER, MEMBER, CONTACT, APP.",
           "type": "string"
         }
       },
       "type": "object"
     },
     "fulfillmentStatus": {
+      "description": "Supported values: NOT_FULFILLED, FULFILLED, CANCELED, PARTIALLY_FULFILLED. Order's current fulfillment status (whether the order received a tracking number or was delivered/picked up).",
       "type": "string"
     },
     "fulfillments": {
@@ -161,12 +193,15 @@
       "type": "array"
     },
     "id": {
+      "description": "Order ID (auto-generated upon order creation).",
       "type": "string"
     },
     "isInternalOrderCreate": {
+      "description": "property not documented",
       "type": "boolean"
     },
     "lastUpdated": {
+      "description": "Date and time of latest update.",
       "type": "string"
     },
     "lineItems": {
@@ -180,36 +215,45 @@
             "type": "array"
           },
           "index": {
+            "description": "Line item ID (auto-generated, stable within this order only)",
             "type": "integer"
           },
           "lineItemType": {
+            "description": "Supported values: NSPECIFIED_LINE_ITEM_TYPE, PHYSICAL, DIGITAL, CUSTOM_AMOUNT_ITEM. Line item type (may be extended)",
             "type": "string"
           },
           "mediaItem": {
             "additionalProperties": true,
             "properties": {
               "height": {
+                "description": "Media item height",
                 "type": "integer"
               },
               "id": {
+                "description": "Media ID (for media items previously saved in Wix Media)",
                 "type": "string"
               },
               "mediaId": {
+                "description": "Deprecated",
                 "type": "string"
               },
               "mediaType": {
+                "description": "Supported values: UNSPECIFIED_MEDIA_TYPE_ITEM, IMAGE. Media type",
                 "type": "string"
               },
               "url": {
+                "description": "Media URL",
                 "type": "string"
               },
               "width": {
+                "description": "Media item width",
                 "type": "integer"
               }
             },
             "type": "object"
           },
           "name": {
+            "description": "Line item name",
             "type": "string"
           },
           "options": {
@@ -217,9 +261,11 @@
               "additionalProperties": true,
               "properties": {
                 "option": {
+                  "description": "Option name",
                   "type": "string"
                 },
                 "selection": {
+                  "description": "Selected choice for this option",
                   "type": "string"
                 }
               },
@@ -228,48 +274,61 @@
             "type": "array"
           },
           "price": {
+            "description": "Deprecated (use priceData instead",
             "type": "string"
           },
           "priceData": {
             "additionalProperties": true,
             "properties": {
               "price": {
+                "description": "Line item price",
                 "type": "string"
               },
               "taxIncludedInPrice": {
+                "description": "Whether tax is included in the price set for this line item",
                 "type": "boolean"
               },
               "totalPrice": {
+                "description": "Total price charged to the customer (per line item) after computation of quantity and discount",
                 "type": "string"
               }
             },
             "type": "object"
           },
           "productId": {
+            "description": "Line item product ID (optional for POS orders)",
             "type": "string"
           },
           "quantity": {
+            "description": "Line item quantity",
             "type": "integer"
           },
           "refundedQuantity": {
+            "description": "property not documented",
             "type": "integer"
           },
           "sku": {
+            "description": "Line item SKU",
             "type": "string"
           },
           "tax": {
+            "description": "Tax applied for this line item",
             "type": "string"
           },
           "taxIncludedInPrice": {
+            "description": "Deprecated (use priceData instead)",
             "type": "boolean"
           },
           "totalPrice": {
+            "description": "Deprecated (use priceData instead)",
             "type": "string"
           },
           "translatedName": {
+            "description": "Product name, translated into the customer's language",
             "type": "string"
           },
           "weight": {
+            "description": "Line item weight",
             "type": "string"
           }
         },
@@ -278,15 +337,19 @@
       "type": "array"
     },
     "number": {
+      "description": "Order number displayed in the owner's store (auto-generated).",
       "type": "integer"
     },
     "numericId": {
+      "description": "Order\u2019s unique numeric ID. Primarily used for sorting and filtering when crawling all orders.",
       "type": "string"
     },
     "paymentStatus": {
+      "description": "Supported values: UNSPECIFIED_PAYMENT_STATUS, NOT_PAID, PAID, PARTIALLY_REFUNDED, FULLY_REFUNDED, PENDING, PARTIALLY_PAID. Current status of the payment.",
       "type": "string"
     },
     "read": {
+      "description": "Deprecated.",
       "type": "boolean"
     },
     "refunds": {
@@ -299,9 +362,11 @@
       "additionalProperties": true,
       "properties": {
         "code": {
+          "description": "Unique code of provided shipping option. For example, \"usps_std_overnight\".",
           "type": "string"
         },
         "deliveryOption": {
+          "description": "Shipping option name.",
           "type": "string"
         },
         "shipmentDetails": {
@@ -311,66 +376,81 @@
               "additionalProperties": true,
               "properties": {
                 "addressLine1": {
+                  "description": "Address line 1 (free text)",
                   "type": "string"
                 },
                 "city": {
+                  "description": "City name",
                   "type": "string"
                 },
                 "company": {
+                  "description": "Company name",
                   "type": "string"
                 },
                 "country": {
+                  "description": "Country code (2 letters)",
                   "type": "string"
                 },
                 "email": {
+                  "description": "Email address",
                   "type": "string"
                 },
                 "fullName": {
                   "additionalProperties": true,
                   "properties": {
                     "firstName": {
+                      "description": "Customer's first name",
                       "type": "string"
                     },
                     "lastName": {
+                      "description": "Customer's last name",
                       "type": "string"
                     }
                   },
                   "type": "object"
                 },
                 "phone": {
+                  "description": "Phone number",
                   "type": "string"
                 },
                 "subdivision": {
+                  "description": "State or district",
                   "type": "string"
                 },
                 "zipCode": {
+                  "description": "ZIP/postal code",
                   "type": "string"
                 }
               },
               "type": "object"
             },
             "discount": {
+              "description": "Discount applied for shipping.",
               "type": "string"
             },
             "priceData": {
               "additionalProperties": true,
               "properties": {
                 "price": {
+                  "description": "Shipping price.",
                   "type": "string"
                 },
                 "taxIncludedInPrice": {
+                  "description": "Whether tax is included in the price.",
                   "type": "boolean"
                 }
               },
               "type": "object"
             },
             "tax": {
+              "description": "Tax applied for shipping.",
               "type": "string"
             }
           },
           "type": "object"
         },
         "shippingRegion": {
+          "description": "Shipping region.",
           "type": "string"
         }
       },
@@ -380,30 +460,38 @@
       "additionalProperties": true,
       "properties": {
         "discount": {
+          "description": "Total calculated discount value.",
           "type": "string"
         },
         "quantity": {
+          "description": "Total number of line items.",
           "type": "integer"
         },
         "shipping": {
+          "description": "Total shipping price, before tax.",
           "type": "string"
         },
         "subtotal": {
+          "description": "Subtotal of all the line items, before tax.",
           "type": "string"
         },
         "tax": {
+          "description": "Total tax.",
           "type": "string"
         },
         "total": {
+          "description": "Total price charged.",
           "type": "string"
         },
         "weight": {
+          "description": "Total items weight.",
           "type": "string"
         }
       },
       "type": "object"
     },
     "weightUnit": {
+      "description": "Supported values: UNSPECIFIED_WEIGHT_UNIT, KG, LB. Weight unit used in this store.",
       "type": "string"
     }
   },
