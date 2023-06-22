@@ -2,7 +2,600 @@
   "$id": "/api/pipes/xxxxxx-products-collect/entity-types/sink",
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
-  "properties": {},
+  "properties": {
+    "additionalInfoSections": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Product info section description"
+          },
+          "title": {
+            "type": "string",
+            "description": "Product info section title"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "collectionIds": {
+      "items": {
+        "type": "string",
+        "description": "A list of all collection IDs that this product is included in (writable via the Catalog > Collection APIs)"
+      },
+      "type": "array"
+    },
+    "convertedPriceData": {
+      "additionalProperties": true,
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "Product price currency."
+        },
+        "discountedPrice": {
+          "anyOf": [
+            {
+              "subtype": "decimal",
+              "type": "string",
+              "description": "Discounted product price (if no discounted price is set, the product price is returned)"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "formatted": {
+          "additionalProperties": true,
+          "properties": {
+            "discountedPrice": {
+              "type": "string",
+              "description": "Discounted product price formatted with the currency (if no discounted price is set, the product formatted price is returned)"
+            },
+            "price": {
+              "type": "string",
+              "description": "Product price formatted with the currency"
+            }
+          },
+          "type": "object"
+        },
+        "price": {
+          "type": "integer",
+          "description": "Product price"
+        }
+      },
+      "type": "object"
+    },
+    "costRange": {
+      "additionalProperties": true,
+      "properties": {
+        "maxValue": {
+          "type": "integer",
+          "description": "Maximum value."
+        },
+        "minValue": {
+          "type": "integer",
+          "description": "Minimum value."
+        }
+      },
+      "type": "object"
+    },
+    "createdDate": {
+      "type": "string",
+      "description": "Date and time the product was created."
+    },
+    "customTextFields": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description. Accepts rich text."
+    },
+    "discount": {
+      "additionalProperties": true,
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Supported values: UNDEFINED, NONE, AMOUNT, PERCENT. Discount type: amount / percent"
+        },
+        "value": {
+          "type": "integer",
+          "description": "Discount value"
+        }
+      },
+      "type": "object"
+    },
+    "exportProductId": {
+      "type": "string",
+      "description": "no desc available."
+    },
+    "id": {
+      "type": "string",
+      "description": "Product ID (generated automatically by the catalog)."
+    },
+    "inventoryItemId": {
+      "type": "string",
+      "description": "Inventory item ID - ID referencing the inventory system."
+    },
+    "lastUpdated": {
+      "type": "string",
+      "description": "Date and time the product was last updated."
+    },
+    "manageVariants": {
+      "type": "boolean",
+      "description": "Whether variants are being managed for this product - enables unique SKU, price and weight per variant. Also affects inventory data."
+    },
+    "media": {
+      "additionalProperties": true,
+      "properties": {
+        "items": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Media ID (for example, nsplsh_306d666a123a4a74306459~mv2_d_4517_2992_s_4_2.jpg)."
+              },
+              "image": {
+                "additionalProperties": true,
+                "properties": {
+                  "height": {
+                    "type": "integer"
+                  },
+                  "url": {
+                    "type": "string",
+                    "description": "Media item URL."
+                  },
+                  "width": {
+                    "type": "integer",
+                    "description": "Media item width."
+                  }
+                },
+                "type": "object"
+              },
+              "mediaType": {
+                "type": "string",
+                "description": "Supported values: unspecified_media_item_type, image, video, audio, document, zip. Media item type (image, video, etc.)."
+              },
+              "thumbnail": {
+                "additionalProperties": true,
+                "properties": {
+                  "height": {
+                    "type": "integer",
+                    "description": "Media item height."
+                  },
+                  "url": {
+                    "type": "string",
+                    "description": "Media item URL."
+                  },
+                  "width": {
+                    "type": "integer",
+                    "description": "Media item width."
+                  }
+                },
+                "type": "object"
+              },
+              "title": {
+                "type": "string",
+                "description": "Media item title."
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "mainMedia": {
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Media ID (for example, nsplsh_306d666a123a4a74306459~mv2_d_4517_2992_s_4_2.jpg)."
+            },
+            "image": {
+              "additionalProperties": true,
+              "properties": {
+                "height": {
+                  "type": "integer",
+                  "description": "Media item height."
+                },
+                "url": {
+                  "type": "string",
+                  "description": "Media item URL."
+                },
+                "width": {
+                  "type": "integer",
+                  "description": "Media item width."
+                }
+              },
+              "type": "object"
+            },
+            "mediaType": {
+              "type": "string",
+              "description": "Supported values: unspecified_media_item_type, image, video, audio, document, zip. Media item type (image, video, etc.)."
+            },
+            "thumbnail": {
+              "additionalProperties": true,
+              "properties": {
+                "height": {
+                  "type": "integer",
+                  "description": "Media item height."
+                },
+                "url": {
+                  "type": "string",
+                  "description": "Media item URL."
+                },
+                "width": {
+                  "type": "integer",
+                  "description": "Media item width."
+                }
+              },
+              "type": "object"
+            },
+            "title": {
+              "type": "string",
+              "description": "Media item title."
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "name": {
+      "type": "string",
+      "description": "Product name."
+    },
+    "numericId": {
+      "type": "string",
+      "description": "Product’s unique numeric ID (assigned in ascending order). Primarily used for sorting and filtering when crawling all products."
+    },
+    "price": {
+      "additionalProperties": true,
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "Deprecated (use priceData instead). Product price currency"
+        },
+        "discountedPrice": {
+          "anyOf": [
+            {
+              "subtype": "decimal",
+              "type": "string",
+              "description": "Deprecated (use priceData instead). Discounted product price (if no discounted price is set, the product price is returned)"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "formatted": {
+          "additionalProperties": true,
+          "properties": {
+            "discountedPrice": {
+              "type": "string",
+              "description": "Deprecated (use priceData instead). Discounted product price (if no discounted price is set, the product price is returned)"
+            },
+            "price": {
+              "type": "string",
+              "description": "Deprecated (use priceData instead). Product price formatted with the currency"
+            }
+          },
+          "type": "object"
+        },
+        "price": {
+          "type": "integer",
+          "description": "Deprecated (use priceData instead). Product price"
+        }
+      },
+      "type": "object"
+    },
+    "priceData": {
+      "additionalProperties": true,
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "Product price currency"
+        },
+        "discountedPrice": {
+          "anyOf": [
+            {
+              "subtype": "decimal",
+              "type": "string",
+              "description": "Discounted product price (if no discounted price is set, the product price is returned)"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "formatted": {
+          "additionalProperties": true,
+          "properties": {
+            "discountedPrice": {
+              "type": "string",
+              "description": "Discounted product price formatted with the currency (if no discounted price is set, the product formatted price is returned)"
+            },
+            "price": {
+              "type": "string",
+              "description": "Product price formatted with the currency"
+            }
+          },
+          "type": "object"
+        },
+        "price": {
+          "type": "integer",
+          "description": "Product price"
+        }
+      },
+      "type": "object"
+    },
+    "priceRange": {
+      "additionalProperties": true,
+      "properties": {
+        "maxValue": {
+          "type": "integer",
+          "description": "Maximum value."
+        },
+        "minValue": {
+          "type": "integer",
+          "description": "Minimum value."
+        }
+      },
+      "type": "object"
+    },
+    "productOptions": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "choices": {
+            "items": {
+              "additionalProperties": true,
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "description": "Choice name"
+                },
+                "inStock": {
+                  "type": "boolean",
+                  "description": "Based on the customer’s choices, which (if any) variants that include the selected choices are in stock"
+                },
+                "media": {
+                  "additionalProperties": true,
+                  "properties": {
+                    "items": {
+                      "items": {
+                        "additionalProperties": true,
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Media ID (for example, nsplsh_306d666a123a4a74306459~mv2_d_4517_2992_s_4_2.jpg)."
+                          },
+                          "image": {
+                            "additionalProperties": true,
+                            "properties": {
+                              "height": {
+                                "type": "integer",
+                                "description": "Media item height."
+                              },
+                              "url": {
+                                "type": "string",
+                                "description": "Media item URL."
+                              },
+                              "width": {
+                                "type": "integer",
+                                "description": "Media item width."
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "mediaType": {
+                            "type": "string",
+                            "description": "Supported values: unspecified_media_item_type, image, video, audio, document, zip. Media item type (image, video, etc.)."
+                          },
+                          "thumbnail": {
+                            "additionalProperties": true,
+                            "properties": {
+                              "height": {
+                                "type": "integer",
+                                "description": "Media item height."
+                              },
+                              "url": {
+                                "type": "string",
+                                "description": "Media item URL."
+                              },
+                              "width": {
+                                "type": "integer",
+                                "description": "Media item width."
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "title": {
+                            "type": "string",
+                            "description": "Media item title."
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "mainMedia": {
+                      "additionalProperties": true,
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Media ID (for example, nsplsh_306d666a123a4a74306459~mv2_d_4517_2992_s_4_2.jpg)."
+                        },
+                        "image": {
+                          "additionalProperties": true,
+                          "properties": {
+                            "height": {
+                              "type": "integer",
+                              "description": "Media item height."
+                            },
+                            "url": {
+                              "type": "string",
+                              "description": "Media item URL."
+                            },
+                            "width": {
+                              "type": "integer",
+                              "description": "Media item width."
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "mediaType": {
+                          "type": "string",
+                          "description": "Supported values: unspecified_media_item_type, image, video, audio, document, zip. Media item type (image, video, etc.)."
+                        },
+                        "thumbnail": {
+                          "additionalProperties": true,
+                          "properties": {
+                            "height": {
+                              "type": "integer",
+                              "description": "Media item height."
+                            },
+                            "url": {
+                              "type": "string",
+                              "description": "Media item URL."
+                            },
+                            "width": {
+                              "type": "integer",
+                              "description": "Media item width."
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "title": {
+                          "type": "string",
+                          "description": "Media item title."
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "value": {
+                  "type": "string",
+                  "description": "Color hex value or choice name"
+                },
+                "visible": {
+                  "type": "boolean",
+                  "description": "Based on the customer’s choices, which (if any) variants that include the selected choices are visible"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "name": {
+            "type": "string",
+            "descrtipion": "Option name (e.g., color, size)"
+          },
+          "optionType": {
+            "type": "string",
+            "description": "Supported values: unspecified_option_type, drop_down, color. Option type - color or other(drop down)"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "productPageUrl": {
+      "additionalProperties": true,
+      "properties": {
+        "base": {
+          "type": "string",
+          "description": "Base URL. For premium sites, this is the domain. For free sites, this is the site URL (e.g mysite.wixsite.com/mysite)."
+        },
+        "path": {
+          "type": "string",
+          "description": "Path to the product page - e.g /product-page/a-product."
+        }
+      },
+      "type": "object"
+    },
+    "productType": {
+      "type": "string",
+      "descrtipion": "Supported values: unspecified_product_type, physical, digital. Currently, only creating physical products ( \"productType\": \"physical\" ) is supported via the API."
+    },
+    "ribbon": {
+      "type": "string",
+      "description": "Product ribbon. Used to highlight relevant information about a product. For example, \"Sale\", \"New Arrival\", \"Sold Out\"."
+    },
+    "ribbons": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Deprecated (use ribbon instead). Ribbon text"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "sku": {
+      "type": "string",
+      "descrtipion": "Stock keeping unit (if variant management is enabled, SKUs will be set per variant, and this field will be empty)."
+    },
+    "slug": {
+      "type": "string",
+      "description": "A friendly URL name (generated automatically by the catalog when a product is created), can be updated."
+    },
+    "stock": {
+      "additionalProperties": true,
+      "properties": {
+        "inStock": {
+          "type": "boolean",
+          "description": "Whether the product is currently in stock (relevant only when tracking manually) Deprecated (use inventoryStatus instead)"
+        },
+        "inventoryStatus": {
+          "type": "string",
+          "description": "Supported values: IN_STOCK, OUT_OF_STOCK, PARTIALLY_OUT_OF_STOCK. The current status of the inventory: * IN_STOCK - In stock * OUT_OF_STOCK - Not in stock * PARTIALLY_OUT_OF_STOCK - Some of the variants are not in stock"
+        },
+        "trackInventory": {
+          "type": "boolean",
+          "description": "Whether inventory is being tracked"
+        }
+      },
+      "type": "object"
+    },
+    "variants": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "visible": {
+      "type": "boolean",
+      "description": "Whether the product is visible to site visitors."
+    },
+    "weight": {
+      "type": "integer",
+      "description": "Product weight (if variant management is enabled, weight will be set per variant, and this field will be empty)."
+    },
+    "weightRange": {
+      "additionalProperties": true,
+      "properties": {
+        "maxValue": {
+          "type": "integer",
+          "description": "Maximum value."
+        },
+        "minValue": {
+          "type": "integer",
+          "description": "Minimum value."
+        }
+      },
+      "type": "object"
+    }
+  },
   "title": "Pipe sink entity type: xxxxxx-products-collect",
   "type": "object"
 }
