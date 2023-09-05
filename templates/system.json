@@ -2,7 +2,7 @@
   "_id": "{{@ system @}}",
   "headers": {
     "Authorization": "$SECRET(api_key)",
-    "wix-site-id": "$ENV(wix-site-id)"
+    "wix-site-id": "{{@ account_id @}}"
   },
   "operations": {
     "contacts-delete": {
