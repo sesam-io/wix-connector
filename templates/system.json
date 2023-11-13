@@ -19,9 +19,19 @@
     },
     "contacts-list": {
       "id_expression": "{{ id }}",
-      "method": "POST",
+      "method": "GET",
+      "next_page_link": "{{@ base_url @}}/contacts/v4/contacts",
+      "next_page_termination_strategy": [
+        "not-full-page",
+        "empty-result"
+      ],
+      "page_size": 1000,
+      "params": {
+        "paging.limit": "{{ page_size }}",
+        "paging.offset": "{{ page_size|int*page }}"
+      },
       "payload_property": "contacts",
-      "url": "contacts/v4/contacts/query"
+      "url": "contacts/v4/contacts"
     },
     "contacts-lookup": {
       "id_expression": "{{ id }}",
