@@ -60,6 +60,20 @@
     "inventory-list": {
       "id_expression": "{{ id }}",
       "method": "POST",
+      "next_page_link": "{{@ base_url @}}/stores/v2/inventoryItems/query",
+      "next_page_termination_strategy": [
+        "empty-result",
+        "not-full-page"
+      ],
+      "page_size": 1000,
+      "payload": {
+        "query": {
+          "paging": {
+            "limit": "{{ page_size }}",
+            "offset": "{{ page_size|int*page }}"
+          }
+        }
+      },
       "payload_property": "inventoryItems",
       "url": "stores/v2/inventoryItems/query"
     },
