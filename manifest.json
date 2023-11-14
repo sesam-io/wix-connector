@@ -1,8 +1,7 @@
 {
   "system": "Wix",
   "additional_parameters": {
-    "wix-site-id": {},
-    "base_url": {}
+    "wix-site-id": {}
   },
   "auth": "api_key",
   "datatypes": {
