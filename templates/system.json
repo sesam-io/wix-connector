@@ -225,6 +225,6 @@
     }
   },
   "type": "system:rest",
-  "url_pattern": "https://www.wixapis.com/%s",
+  "url_pattern": "{{@ base_url @}}/%s",
   "verify_ssl": true
 }
