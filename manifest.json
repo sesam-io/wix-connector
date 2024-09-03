@@ -1,9 +1,27 @@
 {
   "system": "Wix",
   "additional_parameters": {
-    "wix-site-id": {}
+    "token_url": {}
   },
-  "auth": "api_key",
+  "auth": "oauth2",
+  "oauth2": {
+    "login_url": "https://www.wix.com/installer/install",
+    "scopes": [
+      "SCOPE.DC.MANAGE-YOUR-APP",
+      "SCOPE.HEADLESS.MANAGE",
+      "SCOPE.DC-CONTACTS-MEGA.MANAGE-MEMBERS-CONTACTS",
+      "SCOPE.STORES.INVENTORY_ITEM_WRITE",
+      "SCOPE.STORES.INVENTORY_ITEM_READ",
+      "SCOPE.DC-MEMBERS.MANAGE-MEMBERS",
+      "SCOPE.DC-PAIDPLANS.MANAGE-ORDERS",
+      "SCOPE.DC-RESTAURANTS.MANAGE-ORDERS",
+      "SCOPE.DC-EVENTS.MANAGE-ORDERS",
+      "SCOPE.DC-STORES.MANAGE-ORDERS",
+      "SCOPE.DC-STORES.MANAGE-PRODUCTS",
+      "SCOPE.DC-CURRENCY-CONVERTER.MANAGE-CURRENCIES"
+    ],
+    "token_url": "https://www.wix.com/oauth/access"
+  },
   "datatypes": {
     "contacts": {
       "template": "templates/contacts.json"
