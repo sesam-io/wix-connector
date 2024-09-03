@@ -20,7 +20,8 @@
       "SCOPE.DC-STORES.MANAGE-PRODUCTS",
       "SCOPE.DC-CURRENCY-CONVERTER.MANAGE-CURRENCIES"
     ],
-    "token_url": "https://www.wix.com/oauth/access"
+    "token_url": "https://www.wix.com/oauth/access",
+    "app_url": "https://wix.to/i7G7GfS"
   },
   "datatypes": {
     "contacts": {
